@@ -1,0 +1,108 @@
+﻿@using DataDomain
+@model IEnumerable<DataDomain.UserCharacter>
+
+@{
+    ViewData["Title"] = "Characters";
+    IEnumerable<UserPermission> characters = ViewBag.Characters;
+}
+
+<h1>Characters</h1>
+<p class="lead">These are your characters and the characters your friends have shared with you!</p>
+<hr class="hr"/>
+<div class="d-grid gap-2 mb-3">
+    <a asp-action="Create" class="btn btn-outline-primary btn-block"><i class="person-add"></i>Create New Character</a>
+</div>
+<div id="tabbed">
+    <ul>
+        <li><a href="#yourCharacters">Your Characters (@Model.Count())</a></li>
+        <li><a href="#sharedCharacters">Shared With You (@characters.Count())</a></li>
+    </ul>
+
+    <div id="yourCharacters">
+        <h4>Your Characters</h4>
+        <hr class="hr" />
+        @if (@Model.Count() == 0)
+        {
+            <h5 class="text-warning">You don't have any characters yet!</h5>
+            <a asp-action="Create" class="btn btn-outline-success shadow">Create My First Character!</a>
+        }
+        else
+        {
+            <div class="row mb-1">
+                @foreach (var character in Model)
+                {
+                    <div class="col-sm-6">
+                        <div class="card border-secondary mb-4">
+                            <div class="card-header border-light text-white bg-secondary">
+
+                                <h5 class="card-title">
+                                    @Html.DisplayFor(modelItem => character.CharacterName)
+                                </h5>
+                                   
+                                <h6 class="card-subtitle mb-2"> 
+                                    @Html.DisplayFor(modelItem => character.CharacterFirstName)
+                                    @Html.DisplayFor(modelItem => character.CharacterMiddleName)
+                                    @Html.DisplayFor(modelItem => character.CharacterLastName)
+                                </h6>
+                                @if(character.CharacterFirstName == null && character.CharacterMiddleName == null && character.CharacterLastName == null)
+                                {
+                                    <h6 class="card-subtitle mb-2"> 
+                                        <br />
+                                    </h6>
+                                }
+                                
+                            </div>
+                        <div class="card-body border-light">
+                                <div class="btn-group" role="group" aria-label="Options">
+                                    @Html.ActionLink("Details", "Details", new { id = character.CharacterID }, new { @class = "btn btn-outline-primary" })
+                                    <a class="btn btn-outline-info" asp-area="" asp-controller="Permission" asp-action="Details" asp-route-id=@character.CharacterID>Share</a>
+                                    @Html.ActionLink("Edit", "Edit", new { id = character.CharacterID, p = 0 }, new { @class = "btn btn-outline-warning" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = character.CharacterID }, new { @class = "btn btn-outline-danger" })
+                                </div>
+                        </div>
+                        <div class="card-footer border-dark">
+                            <small class="text-muted">Last Edited: @character.LastEdited.ToString("MM/dd/yyyy")</small>
+                        </div>
+                    </div> 
+                </div>
+                }
+            </div>
+        }
+    </div>
+    <div id="sharedCharacters">
+        <h4>Shared Characters</h4>
+        <hr class="hr" />
+        <div class="row">
+            @if(characters.Count() == 0)
+            {
+                <h5 class="text-warning">You don't have any characters shared with you yet!</h5>
+            }
+            else
+            {
+                @foreach (var character in characters)
+                {
+                    <div class="col-sm-6">
+                        <div class="card border-dark mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @Html.DisplayFor(modelItem => character.CharacterName)
+                                </h5>
+                                <p>Your Permission Type is @character.AccessType</p>
+                                @Html.ActionLink("Details", "Details", new { id = character.CharacterID }, new {@class="btn btn-outline-primary"})
+                                @if(@character.AccessType == "Editor")
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = character.CharacterID }, new {@class="btn btn-outline-warning"});
+                                }                           
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Creator: @character.CreatorID</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+

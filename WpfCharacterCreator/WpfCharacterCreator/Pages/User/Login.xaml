@@ -1,0 +1,63 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Login">
+
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height=".75*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Character Creator" Style="{StaticResource PrimaryTitleLabel}" Margin="0"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="DarkSlateBlue"/>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BoxGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height=".75*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height=".75*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height=".5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Log In" Style="{StaticResource SecondaryTitleLabel}"/>
+
+            <Label Grid.Row="2" Grid.Column="1" Content="Username" Style="{StaticResource TopLabel}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtUsername" MaxLength="20" Style="{StaticResource TextBelow}"/>
+
+            <Label Grid.Row="4" Grid.Column="1" Content="Password" Style="{StaticResource TopLabel}"/>
+            <PasswordBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pwdPassword" MaxLength="100" Style="{StaticResource PasswordBelow}"/>
+
+            <Button Grid.Row="6" Grid.Column="1" x:Name="btnLogIn" Click="btnLogIn_Click" Content="Log In" Style="{StaticResource CallToAction}"/>
+            <Button Grid.Row="6" Grid.Column="2" x:Name="btnCreateNewAccount" Click="btnCreateNewAccount_Click" Content="Create New Account" Style="{StaticResource CallToActionSecondary}"/>
+
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnOriginalVersion" Click="btnOriginalVersion_Click" Content="Visit Old Version" Style="{StaticResource LinkButton}"/>
+        
+        </Grid>
+        
+    </Grid>
+</Page>

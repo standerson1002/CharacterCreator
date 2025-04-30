@@ -1,0 +1,1356 @@
+﻿<Window x:Class="WpfCharacterCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCharacterCreator"
+        mc:Ignorable="d"
+        Title="My Character Creator" Height="650" Width="1200"
+        Background="White">
+    
+    <Window.Resources>
+        <!-- Labels -->
+        <Style x:Key="Header" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="60"/>
+        </Style>
+        <Style x:Key="AboveLabel" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style x:Key="LeftLabel" TargetType="Label">
+            <Setter Property="Margin" Value="1,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+
+        <!-- Buttons -->
+        <Style x:Key="HeaderButtons" TargetType="Button">
+            <Setter Property="Margin" Value="7"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#FFF30080"/>
+                    <Setter Property="Foreground" Value="#FFF30080"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HeaderAccountButtons" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10,0,10,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SkinnyButton" TargetType="Button">
+            <Setter Property="Margin" Value="200,5,200,5"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#FFF30080"/>
+                    <Setter Property="Foreground" Value="#FFF30080"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BigButton" TargetType="Button">
+            <Setter Property="Margin" Value="50,25,50,25"/>
+            <Setter Property="Padding" Value="5,15,5,15"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#FFF30080"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#FFF30080"/>
+                    <Setter Property="Foreground" Value="#FFF30080"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="NormalButton" TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#FFF30080"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#FFF30080"/>
+                    <Setter Property="Foreground" Value="#FFF30080"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DescriptionButton" TargetType="Button">
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#FFF30080"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#FFF30080"/>
+                    <Setter Property="Foreground" Value="#FFF30080"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="WarningButton" TargetType="Button">
+            <Setter Property="Margin" Value="100,10,100,10"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Red"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Text Blocks -->
+        <Style x:Key="TextBlockMain" TargetType="TextBlock">
+            <Setter Property="Margin" Value="50,5,50,5"/>
+            <Setter Property="Padding" Value="1,5,1,5"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        </Style>
+        <Style x:Key="WarningTextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="50,5,50,5"/>
+            <Setter Property="Padding" Value="1,5,1,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        </Style>
+
+        <!-- Text Boxes -->
+        <Style x:Key="TextBoxLarge" TargetType="TextBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+        <Style x:Key="TextBoxMedium" TargetType="TextBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="TextBoxDescription" TargetType="TextBox">
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="TextBoxMain" TargetType="TextBox">
+            <Setter Property="Margin" Value="50,5,50,5"/>
+            <Setter Property="Padding" Value="1,5,1,5"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFF30080"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+        
+        <!-- Password Boxes -->
+         <Style x:Key="PasswordBoxMain" TargetType="PasswordBox">
+            <Setter Property="Margin" Value="50,5,50,5"/>
+            <Setter Property="Padding" Value="1,5,1,5"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFF30080"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+         <Style x:Key="WarningPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Margin" Value="10,5,100,5"/>
+            <Setter Property="Padding" Value="1,5,1,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Red"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+
+
+        <!-- Tab Controls -->
+        <Style TargetType="TabControl">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+        
+        <!-- Tab Items -->
+        <Style TargetType="TabItem">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+        
+        <!-- Combo Box -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+        </Style>
+        
+        <!-- List View -->
+        <Style TargetType="ListView">
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="#FFC00065"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/> 
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+            
+        <!-- Sides -->
+        <Grid x:Name="gridTopBorder" Grid.Row="0" Grid.ColumnSpan="3" Background="#FFC00065"/>
+        <Grid x:Name="gridLeftBorder"  Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Background="#FFC00065"/>
+        <Grid x:Name="gridRightBorder" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="#FFC00065"/>
+                
+        <!-- Header -->
+        <Grid x:Name="gridHeader" Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.RowSpan="2">
+                <Button x:Name="btnFriends" Click="btnFriends_Click" Style="{StaticResource NormalButton}" Content="Friends" Background="White"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.RowSpan="2">
+                <Button x:Name="btnCharacters" Click="btnCharacters_Click" Style="{StaticResource NormalButton}" Content="Characters" Background="White"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Button x:Name="btnUsername" Click="btnUsername_Click" Style="{StaticResource HeaderAccountButtons}" Content="Username"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Button x:Name="btnLogOut" Click="btnLogOut_Click" Style="{StaticResource HeaderAccountButtons}" Content="Log Out" FontWeight="Normal"/>
+            </Grid>
+        </Grid>
+        
+        <!-- Footer -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Label x:Name="lblErrorHeader" Foreground="Red" FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Error</Label>
+            <Label x:Name="lblSuccessHeader" Foreground="LightGreen" FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Success</Label>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Label x:Name="lblErrorMessage" Foreground="Red" FontSize="12" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="25,0,25,2">Error Message Shows Here.</Label>
+            <Label x:Name="lblSuccessMessage" Foreground="LightGreen" FontSize="12" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="25,0,25,2">Success Message Shows Here.</Label>
+        </Grid>
+        
+
+        <!-- Log In -->
+        <Grid x:Name="gridLogin" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.RowSpan="3" Grid.ColumnSpan="4" Background="#FFF30080"/>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource Header}">Log In</Label>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Button x:Name="btnCreateNewAccount" Click="btnCreateNewAccount_Click" Style="{StaticResource SkinnyButton}" Content="Create New Account">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius=".5"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource AboveLabel}">Username</Label>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBox x:Name="txtUsername" Style="{StaticResource TextBoxMain}"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource AboveLabel}">Password</Label>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+                <PasswordBox x:Name="pwdPassword" Style="{StaticResource PasswordBoxMain}"/>
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
+                <Button x:Name="btnLogIn" Click="btnLogIn_Click" Style="{StaticResource BigButton}" Content="Log In">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius=".5"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+        </Grid>
+            
+        <!-- Create New Account -->
+        <Grid x:Name="gridCreateAccount" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.RowSpan="3" Grid.ColumnSpan="4" Background="#FFF30080"/>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource Header}" Content="Create New Account"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Button x:Name="btnBackToLogin" Click="btnBackToLogin_Click" Style="{StaticResource SkinnyButton}" Content="Return to Login Page"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Label Style="{StaticResource AboveLabel}" Content="Username"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <TextBox x:Name="txtInsertUsername" Style="{StaticResource TextBoxMain}" Margin="10,5,10,5"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2">
+                <Label Style="{StaticResource AboveLabel}" Content="Email"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="2">
+                <TextBox x:Name="txtInsertEmail" Style="{StaticResource TextBoxMain}" Margin="10,5,10,5"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Label Style="{StaticResource AboveLabel}" Content="Choose Password"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1">
+                <PasswordBox x:Name="pwdChoosePassword" Style="{StaticResource PasswordBoxMain}" Margin="10,5,10,5"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="2">
+                <Label Style="{StaticResource AboveLabel}" Content="Verify Password"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="2">
+                <PasswordBox x:Name="pwdVerifyPassword" Style="{StaticResource PasswordBoxMain}" Margin="10,5,10,5"/>
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
+                <Button x:Name="btnCreateAccount" Click="btnCreateAccount_Click" Content="Create Account" Style="{StaticResource BigButton}" Margin="10,25,10,25">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius=".5"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+        </Grid>
+        
+        <!-- User Profile -->
+        <Grid x:Name="gridUserProfile" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Background="#FFF30080"/>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label x:Name="lblUserProfileUsername" Style="{StaticResource Header}" Content="Username" HorizontalContentAlignment="Left"/>
+            </Grid>
+            <Grid x:Name="gridEditProfileButton" Grid.Row="1" Grid.Column="3">
+                <Button x:Name="btnUserProfileEditProfile" Click="btnUserProfileEditProfile_Click" Style="{StaticResource NormalButton}" Content="Edit Profile" FontSize="16"/>
+            </Grid>
+            <Grid x:Name="gridSaveProfileButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button x:Name="btnChangePassword" Click="btnChangePassword_Click" Style="{StaticResource NormalButton}" Content="Change Password"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="btnUserProfileSaveChanges" Click="btnUserProfileSaveChanges_Click" Style="{StaticResource NormalButton}" Content="Save Changes"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+                <Image x:Name="imgUserProfileProfilePicture" Source="/defaultPFP.png" />
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox x:Name="txtUserProfileEmail" Style="{StaticResource TextBoxMain}" VerticalAlignment="Stretch" Margin="10,5,10,5"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox x:Name="txtUserProfileBio" Style="{StaticResource TextBoxMain}" VerticalAlignment="Stretch" Margin="10,5,10,5" VerticalContentAlignment="Top" TextWrapping="Wrap"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Background="#FFF30080"/>
+        </Grid>
+
+        <!-- Change Password -->
+        <Grid x:Name="gridChangePassword" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.RowSpan="10" Background="#FFF30080"/>
+            <Grid Grid.Column="3" Grid.RowSpan="10" Background="#FFF30080"/>
+            <Grid Grid.Row="0" Grid.ColumnSpan="4" Background="#FFF30080"/>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label Style="{StaticResource Header}" Content="Change Password"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.ColumnSpan="4" Background="#FFF30080"/>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Label Style="{StaticResource AboveLabel}" Content="Email"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2">
+                <Label Style="{StaticResource AboveLabel}" Content="Current Password"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <TextBox x:Name="txtChangePasswordEmail" Style="{StaticResource TextBoxMain}"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="2">
+                <PasswordBox x:Name="pwdOldPassword" Style="{StaticResource PasswordBoxMain}"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Label Style="{StaticResource AboveLabel}" Content="New Password"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="2">
+                <Label Style="{StaticResource AboveLabel}" Content="Verify New Password"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1">
+                <PasswordBox x:Name="pwdNewPassword" Style="{StaticResource PasswordBoxMain}"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="2">
+                <PasswordBox x:Name="pwdConfrimNewPassword" Style="{StaticResource PasswordBoxMain}"/>
+            </Grid>
+
+            <Grid Grid.Row="7" Grid.ColumnSpan="4" Background="#FFF30080"/>
+            <Grid Grid.Row="8" Grid.Column="1" Background="#FFC00065">
+                <Button x:Name="btnChangePasswordCancel" Click="btnChangePasswordCancel_Click" Style="{StaticResource NormalButton}" Content="Cancel"/>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="2" Background="#FFC00065">
+                <Button x:Name="btnChangePasswordConfirm" Click="btnChangePasswordConfirm_Click" Style="{StaticResource NormalButton}" Content="Change Password"/>
+            </Grid>
+            <Grid Grid.Row="9" Grid.ColumnSpan="4" Background="#FFF30080"/>
+
+
+
+
+
+        </Grid>
+
+        <!-- Friends -->
+        <Grid x:Name="gridFriends" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Background="#FFF30080">
+                <Label Style="{StaticResource Header}" Content="Friends"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Background="#FFF30080">
+                <TextBox x:Name="txtSearchUsers" Style="{StaticResource TextBoxLarge}"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" Background="#FFF30080">
+                <Button x:Name="btnSearchUsers" Click="btnSearchUsers_Click" Style="{StaticResource NormalButton}" Content="Search User" Background="White"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Background="#FFF30080">
+                <TabControl x:Name="tabFriendOptions">
+                    <TabItem x:Name="tabFriends" Header="Friends">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <ListView x:Name="listFriends">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="User" DisplayMemberBinding="{Binding UserFriendID}" Width="100"></GridViewColumn>
+                                            <GridViewColumn Header="Friends Since" DisplayMemberBinding="{Binding UserFriendDate}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button x:Name="btnViewFriendProfile" Click="btnViewFriendProfile_Click" Style="{StaticResource NormalButton}" Content="View Profile" />
+                            </Grid>
+                        </Grid>
+
+                    </TabItem>
+                    <TabItem x:Name="tabWaiting" Header="Incoming Friend Requests">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <ListView x:Name="listWaiting">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="User" DisplayMemberBinding="{Binding UserFriendID}"></GridViewColumn>
+                                    </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button x:Name="btnViewWaitingProfile" Click="btnViewWaitingProfile_Click" Style="{StaticResource NormalButton}" Content="View Profile"/>
+                            </Grid>
+                        </Grid>
+                        
+                            
+                    </TabItem>
+                    <TabItem x:Name="tabPending" Header="Pending Friend Requests">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <ListView x:Name="listPending">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="User" DisplayMemberBinding="{Binding UserFriendID}"></GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button x:Name="btnViewPendingProfile" Click="btnViewPendingProfile_Click" Style="{StaticResource NormalButton}" Content="View Profile"/>
+                            </Grid>
+                        </Grid>
+                        
+                    </TabItem>
+                </TabControl>
+            </Grid>
+                
+
+
+
+
+
+            </Grid>
+                
+        <!-- Other User Profile -->
+        <Grid x:Name="gridOtherUserProfile" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label x:Name="lblOtherUserProfileUsername" Style="{StaticResource Header}" Content="Username"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label x:Name="lblOtherUserFriendStatus" Style="{StaticResource AboveLabel}"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Image x:Name="imgOtherUserProfilePicture" Source="/defaultPFP.png"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <TextBlock x:Name="txtOtherUserProfileBio" Style="{StaticResource TextBlockMain}"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Button x:Name="btnOtherUserProfileBack" Click="btnOtherUserProfileBack_Click" Style="{StaticResource NormalButton}" Content="Back"/>
+            </Grid>
+            <Grid x:Name="gridFriendRequestOptions" Grid.Row="3" Grid.Column="2" Visibility="Hidden">
+                <Button x:Name="btnOtherUserProfileSendFriendRequest" Click="btnOtherUserProfileSendFriendRequest_Click" Style="{StaticResource NormalButton}" Content="Send Friend Request" Visibility="Hidden"/>
+                <Button x:Name="btnOtherUserCancelFriendRequest" Click="btnOtherUserCancelFriendRequest_Click" Style="{StaticResource NormalButton}" Content="Cancel Friend Request" Visibility="Hidden"/>
+                <Button x:Name="btnOtherUserUnfriend" Click="btnOtherUserUnfriend_Click" Style="{StaticResource NormalButton}" Content="Unfriend User" Visibility="Hidden"/>
+            </Grid>
+            <Grid x:Name="gridAcceptOrDenyFriendRequest" Grid.Row="3" Grid.Column="2" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button x:Name="btnOtherUserRejectFriendRequest" Click="btnOtherUserRejectFriendRequest_Click" Style="{StaticResource NormalButton}" Content="Reject Request"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="btnOtherUserAcceptFriendRequest" Click="btnOtherUserAcceptFriendRequest_Click" Style="{StaticResource NormalButton}" Content="Accept Request"/>
+                </Grid>
+            </Grid>
+
+
+
+
+
+
+
+
+
+            </Grid>
+
+        <!-- Character Lists -->
+        <Grid x:Name="gridCharacterLists" Grid.Row="1" Grid.Column="1" Background="#FFF30080" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Button x:Name="btnCreateNewCharacter" Click="btnCreateNewCharacter_Click" Style="{StaticResource HeaderButtons}" Content="Create New Character">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius=".5"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TabControl x:Name="tabCharacterOptions">
+                    <TabItem x:Name="tabMyCharacters" Header="My Characters">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <ListView x:Name="listCharacters">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Character" DisplayMemberBinding="{Binding CharacterName}" Width="100"></GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button x:Name="btnViewCharacterProfile" Click="btnViewCharacterProfile_Click" Style="{StaticResource NormalButton}" Content="View Character Profile"/>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="tabCharactersSharedWithMe" Header="Shared With Me">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <ListView x:Name="listSharedCharacters">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Character" DisplayMemberBinding="{Binding CharacterName}" Width="100"></GridViewColumn>
+                                            <GridViewColumn Header="Access Type" DisplayMemberBinding="{Binding AccessType}" Width="100"></GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Button x:Name="btnViewSharedCharacterProfile" Click="btnViewSharedCharacterProfile_Click" Style="{StaticResource NormalButton}" Content="View Character Profile"/>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+
+
+
+
+
+            </Grid>
+
+        <!-- Create New Character -->
+        <Grid x:Name="gridCreateNewCharacter" Grid.Row="1" Grid.Column="1" Background="#FFF30080" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="White">
+                <Label Style="{StaticResource AboveLabel}" Content="Choose a Name For Your New Character"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="White">
+                <TextBox x:Name="txtPickNameForNewCharacter" Style="{StaticResource TextBoxLarge}"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1" Background="White">
+                <Button x:Name="btnCancelCreateNewCharacter" Click="btnCancelCreateNewCharacter_Click" Style="{StaticResource NormalButton}" Content="Cancel"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2" Background="White">
+                <Button x:Name="btnCreateCreateNewCharacter" Click="btnCreateCreateNewCharacter_Click" Style="{StaticResource NormalButton}" Content="Create"/>
+            </Grid>
+            
+                
+
+
+
+
+
+
+            </Grid>
+
+        <!-- Character Profile -->
+        <Grid x:Name="gridCharacterProfile" Grid.Row="1" Grid.Column="1" Visibility="Visible" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Label x:Name="lblCharacterNameProfile" Style="{StaticResource Header}" Content="Name"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Label x:Name="lblCharacterFullName" Style="{StaticResource AboveLabel}" Content="Name" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                <Button x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Style="{StaticResource NormalButton}" Content="Share"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                <Label x:Name="lblCreator" Style ="{StaticResource LeftLabel}"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                <Button x:Name="btnEditCharacter" Click="btnEditCharacter_Click" Style="{StaticResource NormalButton}" Content="Edit"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.ColumnSpan="3">
+                <TabControl>
+                    <TabItem Header="Traits">
+                        <TextBlock x:Name="textTraits" Style="{StaticResource TextBlockMain}" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    </TabItem>
+                    <TabItem Header="Skills">
+                        <TextBlock x:Name="textSkills" Style="{StaticResource TextBlockMain}" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    </TabItem>
+                    <TabItem Header="Likes and Dislikes">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="5*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0">
+                                <Label x:Name="lblLikes" Style="{StaticResource AboveLabel}"/>
+                            </Grid>
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <Label x:Name="lblDislikes" Style="{StaticResource AboveLabel}"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="0">
+                                <TextBlock x:Name="textLikes"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <TextBlock x:Name="textDislikes"/>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+
+        <!-- Edit Character -->
+        <Grid x:Name="gridEditCharacter" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Button x:Name="btnCancelUpdateCharacter" Style="{StaticResource NormalButton}" Content="Cancel" Click="btnCancelUpdateCharacter_Click"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Button x:Name="btnUpdateIdentity" Click="btnUpdateIdentity_Click" Style="{StaticResource NormalButton}" Content="Update"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <TabControl x:Name="tabEditCharacter">
+                    <TabItem Header="Name">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Character Name"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="2">
+                                <TextBox x:Name="txtCharacterName" Style="{StaticResource TextBoxMedium}"/>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="First Name"/>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="2">
+                                <TextBox x:Name="txtFirstName" Style="{StaticResource TextBoxMedium}"/>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Middle Name"/>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="2">
+                                <TextBox x:Name="txtMiddleName" Style="{StaticResource TextBoxMedium}"/>
+                            </Grid>
+                            <Grid Grid.Row="4" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Last Name"/>
+                            </Grid>
+                            <Grid Grid.Row="4" Grid.Column="2">
+                                <TextBox x:Name="txtLastName" Style="{StaticResource TextBoxMedium}"/>
+                            </Grid>
+
+                            <!-- 
+                            <Grid Grid.Row="5" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Gender Identity"/>
+                            </Grid>
+                            <Grid Grid.Row="5" Grid.Column="2">
+                                <ComboBox x:Name="cmbGenderIdentity">
+                                <ComboBoxItem>Male</ComboBoxItem>
+                                <ComboBoxItem>Female</ComboBoxItem>
+                                <ComboBoxItem>Intersex</ComboBoxItem>
+                                <ComboBoxItem>Nonbinary</ComboBoxItem>
+                                <ComboBoxItem>Genderfluid</ComboBoxItem>
+                                <ComboBoxItem>Genderless</ComboBoxItem>
+                            </ComboBox>
+                            </Grid>
+                            <Grid Grid.Row="6" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Birth Gender"/>
+                            </Grid>
+                            <Grid Grid.Row="6" Grid.Column="2">
+                                <ComboBox x:Name="cmbBirthSex">
+                                    <ComboBoxItem>Male</ComboBoxItem>
+                                    <ComboBoxItem>Female</ComboBoxItem>
+                                    <ComboBoxItem>Intersex</ComboBoxItem>
+                                    <ComboBoxItem>Genderless</ComboBoxItem>
+                                </ComboBox>
+                            </Grid>
+                            <Grid Grid.Row="7" Grid.Column="1">
+                                <Label Style="{StaticResource LeftLabel}" Content="Sexuality"/>
+                            </Grid>
+                            <Grid Grid.Row="7" Grid.Column="2">
+                                <ComboBox x:Name="cmbSexuality">
+                                    <ComboBoxItem>Straight</ComboBoxItem>
+                                    <ComboBoxItem>Gay</ComboBoxItem>
+                                    <ComboBoxItem>Bisexual</ComboBoxItem>
+                                    <ComboBoxItem>Pansexual</ComboBoxItem>
+                                    <ComboBoxItem>Asexual</ComboBoxItem>
+                                </ComboBox>
+                            </Grid>
+                            -->
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Traits">
+                        <Grid>
+                            <TabControl>
+                                <TabItem Header="Current Traits">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <ListView x:Name="listCharacterTraits">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridViewColumn Header="Trait" DisplayMemberBinding="{Binding TraitID}" Width="200"></GridViewColumn>
+                                                        <GridViewColumn Header="Connotation" DisplayMemberBinding="{Binding TraitConnotation}" Width="100"></GridViewColumn>
+                                                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding TraitDescription}" Width="600"></GridViewColumn>
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Button x:Name="btnRemoveTrait" Style="{StaticResource NormalButton}" Content="Remove Trait" Click="btnRemoveTrait_Click"/>
+                                        </Grid>
+                                    </Grid>
+
+                                </TabItem>
+                                <TabItem Header="Add Traits">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <ListView x:Name="listTraits">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridViewColumn Header="Trait" DisplayMemberBinding="{Binding TraitID}" Width="200"></GridViewColumn>
+                                                        <GridViewColumn Header="Connotation" DisplayMemberBinding="{Binding TraitConnotation}" Width="100"></GridViewColumn>
+                                                        <GridViewColumn Header="Description" DisplayMemberBinding="{Binding TraitDescription}" Width="600"></GridViewColumn>
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Button x:Name="btnAddTrait" Style="{StaticResource NormalButton}" Content="Add Trait" Click="btnAddTrait_Click"/>
+                                        </Grid>
+                                    </Grid>
+
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Skills">
+                        <TabControl>
+                            <TabItem Header="Manage Skills">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="5*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Grid.Column="1">
+                                        <Label Style="{StaticResource AboveLabel}" Content="Manage Skills"/>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                                        <ListView x:Name="listCharacterSkills" SelectionChanged="listCharacterSkills_SelectionChanged">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Skill" DisplayMemberBinding="{Binding SkillID}" Width="400"></GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1">
+                                        <TextBox x:Name="textUpdateSkillDescription" Style="{StaticResource TextBoxDescription}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="0">
+                                        <Button x:Name="btnRemoveSkill" Click="btnRemoveSkill_Click" Style="{StaticResource NormalButton}" Content="Remove Skill"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="1">
+                                        <Button x:Name="btnUpdateSkill" Click="btnUpdateSkill_Click" Style="{StaticResource NormalButton}" Content="Update Skill"/>
+                                    </Grid>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Add Skills">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="5*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Grid.Column="0">
+                                        <Label Style="{StaticResource AboveLabel}" Content="Choose Skill"/>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="1">
+                                        <Label Style="{StaticResource AboveLabel}" Content="Add Description"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
+                                        <ListView x:Name="listSkills">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Skill" DisplayMemberBinding="{Binding SkillID}" Width="200"></GridViewColumn>
+                                                    <GridViewColumn Header="Category" DisplayMemberBinding="{Binding SkillCategory}" Width="200"></GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1">
+                                        <TextBox x:Name="textSkillDescription" Style="{StaticResource TextBoxDescription}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="1">
+                                        <Button x:Name="btnAddSkill" Click="btnAddSkill_Click"  Style="{StaticResource DescriptionButton}" Content="Add Skill"/>
+                                    </Grid>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <TabItem Header="Likes and Dislikes">
+                        <TabControl>
+                            <TabItem Header="Manage Likes and Dislikes">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                                        <ListView x:Name="listCharacterLikes" SelectionChanged="listCharacterLikes_SelectionChanged">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Likes" DisplayMemberBinding="{Binding CharacterInterest}" Width="400"></GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                                        <ListView x:Name="listCharacterDislikes" SelectionChanged="listCharacterDislikes_SelectionChanged">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Dislikes" DisplayMemberBinding="{Binding CharacterInterest}" Width="400"></GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="2">
+                                        <TextBox x:Name="textLikeDislike" Style="{StaticResource TextBoxDescription}">
+
+                                        </TextBox>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="2">
+                                        <TextBox x:Name="textLikeDislikeDescription" Style="{StaticResource TextBoxDescription}">
+                                            
+                                        </TextBox>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                                        <Button x:Name="btnRemoveInterest" Style="{StaticResource NormalButton}" Content="Remove Like / Dislike" Click="btnRemoveInterest_Click"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="2">
+                                        <Button x:Name="btnUpdateInterest" Style="{StaticResource NormalButton}" Content="Update Like / Dislike" Click="btnUpdateInterest_Click"/>
+                                    </Grid>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Add Like or Dislike">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1.25*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="1.75*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Grid.Column="0">
+                                        <Label Style="{StaticResource LeftLabel}" Content="Like or Dislike:"/>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="2">
+                                        <ComboBox x:Name="comboLikeDislike">
+                                            <ComboBoxItem Content="Like"/>
+                                            <ComboBoxItem Content="Dislike"/>
+                                        </ComboBox>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="0">
+                                        <Label Style="{StaticResource LeftLabel}" Content="Thing:"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                                        <TextBox x:Name="textLikeDislikeName" Style="{StaticResource TextBoxDescription}"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                                        <Label Style="{StaticResource AboveLabel}" Content="Description:"/>
+                                    </Grid>
+                                    
+                                    <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                                        <TextBox x:Name="textAddLikeDislikeDescription" Style="{StaticResource TextBoxDescription}"/>
+                                    </Grid>
+
+
+                                    <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                                        <Button x:Name="btnAddLikeOrDislike" Click="btnAddLikeOrDislike_Click" Style="{StaticResource NormalButton}" Content="Add Like or Dislike"/>
+                                    </Grid>
+                                    
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                        
+                    </TabItem>
+                    
+                    
+                    <TabItem x:Name="tabDeactivateCharacter" Header="DEACTIVATE" Foreground="Red">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                                <Label Style="{StaticResource Header}" Content="Deactivate Character?"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <TextBlock Style="{StaticResource WarningTextBlock}" Text="Are you sure you want to deactivate this character? This action cannot be undone!" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red"/>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="0">
+                                <Label Style="{StaticResource LeftLabel}" Content="Verify Password"/>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <PasswordBox x:Name="pwdDeactivateCharacter" Style="{StaticResource WarningPasswordBox}"/>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                                <Button x:Name="btnDeactivateCharacter" Style="{StaticResource WarningButton}" Content="Deactivate Character" Click="btnDeactivateCharacter_Click"/>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+            
+            </Grid>
+                
+        </Grid>
+
+        <!-- Share Character -->
+        <Grid x:Name="gridShareCharacter" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Label x:Name="lblShareCharacterName" Style="{StaticResource Header}" Content="Share Character"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Label Style="{StaticResource AboveLabel}" Content="User"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Label Style="{StaticResource AboveLabel}" Content="Access Type"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <ComboBox x:Name="comboFriendShare" 
+                          
+                 />
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <ComboBox x:Name="comboAccessType">
+                    <ComboBoxItem Content="Viewer"/>
+                    <ComboBoxItem Content="Editor"/>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Button x:Name="btnCancelShareCharacter" Click="btnCancelShareCharacter_Click" Style="{StaticResource NormalButton}" Content="Cancel"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2">
+                <Button x:Name="btnConfirmShareCharacter" Click="btnConfirmShareCharacter_Click" Style="{StaticResource NormalButton}" Content="Share"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+        
+</Window>

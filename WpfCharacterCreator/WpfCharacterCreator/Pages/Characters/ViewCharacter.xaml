@@ -1,0 +1,70 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.Characters.ViewCharacter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages.Characters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewCharacter">
+
+    <!-- Character Profile -->
+    <Grid Style="{StaticResource BoxGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCharacterNameProfile" Content="Name" Style="{StaticResource PrimaryTitleLabel}"/>
+        <Label Grid.Row="1" Grid.Column="0" x:Name="lblCharacterFullName" Content="Name" Style="{StaticResource TopLabel}"/>
+
+        <Button Grid.Row="0" Grid.Column="1" x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Content="Share" Style="{StaticResource CallToActionSecondary}"/>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="btnEditCharacter" Click="btnEditCharacter_Click"  Content="Edit" Style="{StaticResource WarningButton}"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" Background="Coral">
+            <TabControl>
+                <TabItem Header="Traits">
+                    <TextBlock x:Name="textTraits" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="Skills">
+                    <TextBlock x:Name="textSkills" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="Likes and Dislikes">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <Label x:Name="lblLikes" />
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Label x:Name="lblDislikes" />
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="0">
+                            <TextBlock x:Name="textLikes"/>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <TextBlock x:Name="textDislikes"/>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Label Grid.Row="3" Grid.Column="0" x:Name="lblCreator" Style="{StaticResource SmallTitleLabel}"/>
+        <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblCreated" Style="{StaticResource SmallTitleLabel}"/>
+
+    </Grid>
+</Page>

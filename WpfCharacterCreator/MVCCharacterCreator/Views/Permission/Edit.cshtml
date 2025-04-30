@@ -1,0 +1,59 @@
+﻿@model DataDomain.UserPermission
+
+@{
+    ViewData["Title"] = "Edit Permission";
+    IEnumerable<string> accessTypes = ViewBag.AccessTypes;
+    int character = ViewBag.Character;
+    string user = ViewBag.User;
+    string creator = ViewBag.Creator;
+    string name = ViewBag.Name;
+}
+
+<h4>Edit Permission for @Model.UserID with @Model.CharacterName</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="UserID" class="control-label"></label>
+                <input asp-for="UserID" class="form-control" value=@user/>
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="CreatorID" class="control-label"></label>
+                <input asp-for="CreatorID" class="form-control" value=@creator/>
+                <span asp-validation-for="CreatorID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="CharacterID" class="control-label"></label>
+                <input asp-for="CharacterID" class="form-control" value=@character/>
+                <span asp-validation-for="CharacterID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="CharacterName" class="control-label"></label>
+                <input asp-for="CharacterName" class="form-control" value=@name />
+                <span asp-validation-for="CharacterID" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="AccessType" class="control-label"></label>
+                @Html.DropDownListFor(m => m.AccessType,
+                         new SelectList(accessTypes),
+                         "Choose Access Type",
+                         new { @class = "form-select" })
+                <span asp-validation-for="AccessType" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-info" />
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id=@character>Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

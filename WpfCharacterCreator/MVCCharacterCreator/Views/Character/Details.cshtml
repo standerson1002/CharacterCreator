@@ -1,0 +1,134 @@
+﻿@using DataDomain
+@model DataDomain.UserCharacter
+
+@{
+    ViewData["Title"] = "Details";
+    IEnumerable<CharacterTraitVM> traitList = ViewBag.TraitList;
+    IEnumerable<CharacterSkill> skillList = ViewBag.SkillList;
+    IEnumerable<CharacterLikeDislike> likeList = ViewBag.LikeList;
+    IEnumerable<CharacterLikeDislike> dislikeList = ViewBag.DislikeList;
+    string? access = ViewBag.AccessType;
+
+}
+
+<h1>@Html.DisplayFor(model => model.CharacterName)</h1>
+<h4>
+    @Html.DisplayFor(model => model.CharacterFirstName)
+    @Html.DisplayFor(model => model.CharacterMiddleName)
+    @Html.DisplayFor(model => model.CharacterLastName)
+</h4>
+
+<hr class="hr" />
+
+<div class="mb-4">
+    @if (Model.CreatorID == User.Identity.Name || (access != null && access == "Editor"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterID, p = 0 }, new { @class = "btn btn-warning" })
+    }
+    @if(Model.CreatorID == User.Identity.Name)
+    {
+        <a class="btn btn-info" asp-area="" asp-controller="Permission" asp-action="Details" asp-route-id=@Model.CharacterID>Share</a>
+    }
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+<div>
+
+    <div id="tabbed">
+        <ul>
+            <li><a href="#traits">Traits (@traitList.Count())</a></li>
+            <li><a href="#skills">Skills (@skillList.Count())</a></li>
+            <li><a href="#likes-and-dislikes">Likes (@likeList.Count()) and Dislikes (@dislikeList.Count())</a></li>
+        </ul>
+        <div id="traits">
+            @if(traitList.Count() == 0)
+            {
+                <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no traits!</h5>
+            }
+            else
+            {
+                <h4>@Html.DisplayFor(model => model.CharacterName) is...</h4>
+                <hr class="hr" />
+                <ul class="list-group">
+                    @foreach (CharacterTraitVM trait in traitList)
+                    {
+                        @if(trait.TraitConnotation == "positive")
+                        {
+                            <li class="list-group-item list-group-item-success"><b>@trait.TraitID</b>: @trait.TraitDescription</li>
+                        }
+                        else if(trait.TraitConnotation == "negative")
+                        {
+                            <li class="list-group-item list-group-item-danger"><b>@trait.TraitID</b>: @trait.TraitDescription</li>
+                        }
+                        else
+                        {
+                            <li class="list-group-item list-group-item-light"><b>@trait.TraitID</b>: @trait.TraitDescription</li>
+                        }
+                    
+                }
+            </ul>
+        }
+    </div>
+    <div id="skills">
+        @if(skillList.Count() == 0)
+        {
+            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no skills!</h5>
+        }
+        else
+        {
+            <h4>@Html.DisplayFor(model => model.CharacterName) is skilled at... </h4>
+            <hr class="hr"/>
+            <ul class="list-group">
+            @foreach (CharacterSkill skill in skillList)
+            {
+                <li class="list-group-item"><b>@skill.SkillID:</b> @skill.CharacterSkillDescription</li>
+            }
+            </ul>
+        }
+    </div>
+    <div id="likes-and-dislikes" class="container">
+        <div class="row">
+            <div id="likes" class="col">
+                @if (likeList.Count() == 0)
+                {
+                    <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) doesn't like anything!</h5>
+                }
+                else
+                {
+                    <h4>@Html.DisplayFor(model => model.CharacterName) likes...</h4>
+                    <hr class="hr" />
+                    <ul class="list-group">
+                        @foreach(CharacterLikeDislike like in likeList)
+                        {
+                            <li class="list-group-item list-group-item-success"><b>@like.CharacterInterest:</b> @like.CharacterLikeDislikeDescription</li>
+                        }
+                    </ul>
+                }
+            </div>
+            <div id="dislikes" class="col">
+                @if(dislikeList.Count() == 0)
+                {
+                    <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) doesn't dislike anything!</h5>
+                }
+                else
+                {
+                    <h4>@Html.DisplayFor(model => model.CharacterName) dislikes...</h4>
+                    <hr class="hr" />
+                    <ul class="list-group">
+                        @foreach (CharacterLikeDislike dislike in dislikeList)
+                        {
+                            <li class="text-danger list-group-item list-group-item-danger"><b>@dislike.CharacterInterest:</b> @dislike.CharacterLikeDislikeDescription</li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+    <p class="text-muted">
+        Last edited on @Model.LastEdited.ToString("MM/dd/yyyy") |
+        Created by @Html.DisplayFor(model => model.CreatorID) on @Model.CreatedAt.ToString("MM/dd/yyyy")
+    </p>
+  
+</div>
+
