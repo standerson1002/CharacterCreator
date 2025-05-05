@@ -9,7 +9,7 @@
       Title="CreateCharacter">
 
     <!-- Create New Character -->
-    <Grid>
+    <Grid Style="{StaticResource BoxGrid}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
@@ -24,7 +24,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Choose a Name For Your New Character" Style="{StaticResource TitleLabel}"/>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Choose a Name For Your New Character" Style="{StaticResource SecondaryTitleLabel}"/>
         
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtPickNameForNewCharacter"/>
 

@@ -8,10 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ViewCharacter">
 
-    <!-- Character Profile -->
     <Grid Style="{StaticResource BoxGrid}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
@@ -22,19 +20,44 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCharacterNameProfile" Content="Name" Style="{StaticResource PrimaryTitleLabel}"/>
-        <Label Grid.Row="1" Grid.Column="0" x:Name="lblCharacterFullName" Content="Name" Style="{StaticResource TopLabel}"/>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource HeaderGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="1" x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Content="Share" Style="{StaticResource CallToActionSecondary}"/>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="btnEditCharacter" Click="btnEditCharacter_Click"  Content="Edit" Style="{StaticResource WarningButton}"/>
+            <Label  Grid.Column="0" x:Name="lblCharacterNameProfile" Content="Name" Style="{StaticResource PrimaryTitleLabel}"/>
+            <Button Grid.Column="1" x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Content="Share" Style="{StaticResource CallToActionSecondary}"/>
+            <Button Grid.Column="2" x:Name="btnEditCharacter" Click="btnEditCharacter_Click"  Content="Edit" Style="{StaticResource WarningButton}"/>
 
-        <Grid Grid.Row="2" Grid.ColumnSpan="3" Background="Coral">
+        </Grid>
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblCharacterFullName" Content="Name" Style="{StaticResource TopLabel}"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource TabGrid}">
             <TabControl>
                 <TabItem Header="Traits">
-                    <TextBlock x:Name="textTraits" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" x:Name="lblTraits" Style="{StaticResource SecondaryTitleLabel}" Content="Traits"/>
+                        <TextBlock Grid.Row="1" x:Name="textTraits" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Skills">
-                    <TextBlock x:Name="textSkills" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" x:Name="lblSkills" Style="{StaticResource SecondaryTitleLabel}" Content="Skills"/>
+                        <TextBlock Grid.Row="1" x:Name="textSkills" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Likes and Dislikes">
                     <Grid>
@@ -46,25 +69,20 @@
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Grid.Column="0">
-                            <Label x:Name="lblLikes" />
-                        </Grid>
-                        <Grid Grid.Row="0" Grid.Column="1">
-                            <Label x:Name="lblDislikes" />
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="0">
-                            <TextBlock x:Name="textLikes"/>
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="1">
-                            <TextBlock x:Name="textDislikes"/>
-                        </Grid>
+                        
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblLikes" Style="{StaticResource SecondaryTitleLabel}" Content="Likes"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" x:Name="textLikes"/>
+
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="lblDislikes" Style="{StaticResource SecondaryTitleLabel}" Content="Dislikes"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="textDislikes"/>
+
                     </Grid>
                 </TabItem>
             </TabControl>
         </Grid>
 
         <Label Grid.Row="3" Grid.Column="0" x:Name="lblCreator" Style="{StaticResource SmallTitleLabel}"/>
-        <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblCreated" Style="{StaticResource SmallTitleLabel}"/>
+        <Label Grid.Row="3" Grid.Column="1" x:Name="lblCreated" Style="{StaticResource SmallTitleLabel}"/>
 
     </Grid>
 </Page>

@@ -8,48 +8,48 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ViewCharacterList">
 
-    <!-- Character Lists -->
     <Grid Style="{StaticResource BoxGrid}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="6*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="1" Content="Characters" Style="{StaticResource PrimaryTitleLabel}"/>
-
-        <Grid Grid.Row="1" Grid.Column="1" Background="CornflowerBlue">
+        <Grid Grid.Row="0" Style="{StaticResource HeaderGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0" Content="Characters" Style="{StaticResource PrimaryTitleLabel}"/>
+            <Button Grid.Column="1" x:Name="btnCreateNewCharacter" Click="btnCreateNewCharacter_Click"  Content="Create New Character" Style="{StaticResource CallToAction}"/>
+       
+        </Grid>
+        
+        <Grid Grid.Row="1" Style="{StaticResource TabGrid}">
             <TabControl x:Name="tabCharacterOptions">
                 <TabItem x:Name="tabMyCharacters" Header="My Characters">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="7*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.Row="0" Grid.Column="1" x:Name="listCharacters">
+                        <DataGrid Grid.Row="0" x:Name="listCharacters">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Character" Binding="{Binding CharacterName}" Width="2*"/>
                                 <DataGridTextColumn Header="Created" Binding="{Binding CreatedAt, StringFormat={}{0:MM/dd/yyyy}}" Width="1*"/>
                                 <DataGridTextColumn Header="Last Updated" Binding="{Binding LastEdited, StringFormat={}{0:MM/dd/yyyy}}" Width="1*"/>
                             </DataGrid.Columns>
                         </DataGrid>
-
                         <Button Grid.Row="1" x:Name="btnViewCharacterProfile" Click="btnViewCharacterProfile_Click" Content="View Character Profile" Style="{StaticResource CallToActionSecondary}"/>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="tabCharactersSharedWithMe" Header="Shared With Me">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="7*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.Row="0" Grid.Column="1" x:Name="listSharedCharacters" AutoGenerateColumns="False">
+                        <DataGrid Grid.Row="0" x:Name="listSharedCharacters" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Character" Binding="{Binding CharacterName}" Width="2*"/>
                                 <DataGridTextColumn Header="Creator" Binding="{Binding CreatorID}" Width="1*"/>
@@ -61,8 +61,6 @@
                 </TabItem>
             </TabControl>
         </Grid>
-
-        <Button Grid.Row="2" Grid.Column="1" x:Name="btnCreateNewCharacter" Click="btnCreateNewCharacter_Click"  Content="Create New Character" Style="{StaticResource CallToAction}"/>
 
     </Grid>
 </Page>

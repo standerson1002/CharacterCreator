@@ -96,14 +96,15 @@ namespace WpfCharacterCreator.Pages.Characters
                 List<CharacterTraitVM> characterTraits = _characterManager.GetAllTraitsForCharacter(character.CharacterID);
                 if (characterTraits.Count == 0)
                 {
-                    textTraits.Text = character.CharacterName + " has no traits.";
+                    lblTraits.Content = character.CharacterName + " has no traits.";
+                    textTraits.Text = "";
                 }
                 else
                 {
-                    textTraits.Text = character.CharacterName + " is...\n\n\n";
+                    lblTraits.Content = character.CharacterName + " is...";
                     foreach (CharacterTraitVM trait in characterTraits)
                     {
-                        textTraits.Text += trait.TraitID + ": " + trait.TraitDescription + "\n\n";
+                        textTraits.Text += trait.TraitID + ": " + trait.TraitDescription + "\n";
                     }
                 }
 
@@ -111,14 +112,15 @@ namespace WpfCharacterCreator.Pages.Characters
                 List<CharacterSkill> characterSkills = _characterManager.GetAllSkillsForCharacter(character.CharacterID);
                 if (characterSkills.Count == 0)
                 {
-                    textSkills.Text = character.CharacterName + " has no skills.";
+                    lblSkills.Content = character.CharacterName + " has no skills.";
+                    textSkills.Text = "";
                 }
                 else
                 {
-                    textSkills.Text = character.CharacterName + " is skilled with...\n\n\n";
+                    lblSkills.Content = character.CharacterName + " is skilled at...";
                     foreach (CharacterSkill skill in characterSkills)
                     {
-                        textSkills.Text += skill.SkillID + ": " + skill.CharacterSkillDescription + "\n\n";
+                        textSkills.Text += skill.SkillID + ": " + skill.CharacterSkillDescription + "\n";
                     }
                 }
 
@@ -141,30 +143,30 @@ namespace WpfCharacterCreator.Pages.Characters
 
                 if (characterLikes.Count == 0)
                 {
-                    lblLikes.Content = "";
-                    textLikes.Text = character.CharacterName + " doesn't like anything.";
+                    lblLikes.Content = character.CharacterName + " doesn't like anything.";
+                    textLikes.Text = "";
                 }
                 else
                 {
-                    lblLikes.Content = character.CharacterName + " Likes...\n\n\n";
+                    lblLikes.Content = character.CharacterName + " Likes...";
                     textLikes.Text = "";
                     foreach (CharacterLikeDislike like in characterLikes)
                     {
-                        textLikes.Text += like.CharacterInterest + ": " + like.CharacterLikeDislikeDescription + "\n\n";
+                        textLikes.Text += like.CharacterInterest + ": " + like.CharacterLikeDislikeDescription + "\n";
                     }
                 }
                 if (characterDislikes.Count == 0)
                 {
-                    lblDislikes.Content = "";
-                    textDislikes.Text = character.CharacterName + " doesn't dislike anything.";
+                    lblDislikes.Content = character.CharacterName + " doesn't dislike anything.";
+                    textDislikes.Text = "";
                 }
                 else
                 {
-                    lblDislikes.Content = character.CharacterName + " Dislikes...\n\n\n";
+                    lblDislikes.Content = character.CharacterName + " Dislikes...";
                     textDislikes.Text = "";
                     foreach (CharacterLikeDislike like in characterDislikes)
                     {
-                        textDislikes.Text += like.CharacterInterest + ": " + like.CharacterLikeDislikeDescription + "\n\n";
+                        textDislikes.Text += like.CharacterInterest + ": " + like.CharacterLikeDislikeDescription + "\n";
                     }
                 }
 

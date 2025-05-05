@@ -10,24 +10,29 @@
 
     <Grid Style="{StaticResource BoxGrid}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="lblCharacterPermissions" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Permissions" Style="{StaticResource PrimaryTitleLabel}"/>
-        <Button x:Name="btnShareCharacter" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Share" Style="{StaticResource CallToAction}" Click="btnShareCharacter_Click"/>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource HeaderGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
-            <DataGrid x:Name="gridPermissions" AutoGenerateColumns="False">
+            <Label x:Name="lblCharacterPermissions" Grid.Column="0" Content="Permissions" Style="{StaticResource PrimaryTitleLabel}"/>
+            <Button x:Name="btnShareCharacter" Grid.Column="1"  Content="Share" Style="{StaticResource CallToAction}" Click="btnShareCharacter_Click"/>
+
+        </Grid>
+        
+        
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TabGrid}">
+            <DataGrid x:Name="gridPermissions">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="User" Binding="{Binding UserID}" Width="1*"/>
                     <DataGridTextColumn Header="Access Type" Binding="{Binding AccessType}" Width="1*"/>
@@ -36,8 +41,8 @@
         </Grid>
 
 
-        <Button Grid.Row="3" Grid.Column="1" x:Name="btnEditPermission" Content="Edit Permission" Style="{StaticResource WarningButton}" Click="btnEditPermission_Click"/>
-        <Button Grid.Row="3" Grid.Column="2" x:Name="btnViewCharacter" Content="View Character" Style="{StaticResource CallToActionSecondary}" Click="btnViewCharacter_Click"/>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="btnEditPermission" Content="Edit Permission" Style="{StaticResource WarningButton}" Click="btnEditPermission_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="btnViewCharacter" Content="View Character" Style="{StaticResource CallToActionSecondary}" Click="btnViewCharacter_Click"/>
 
     </Grid>
 </Page>

@@ -10,23 +10,27 @@
 
     <!-- Edit Character -->
     <Grid Style="{StaticResource BoxGrid}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5.5*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Edit Character" Style="{StaticResource PrimaryTitleLabel}"/>
+        <Grid Grid.Row="0" Style="{StaticResource HeaderGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="1" Grid.Column="0" x:Name="btnUpdateIdentity" Click="btnUpdateIdentity_Click" Content="Update" Style="{StaticResource CallToAction}"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="btnCancelUpdateCharacter" Content="Cancel" Click="btnCancelUpdateCharacter_Click" Style="{StaticResource BackButton}"/>
+            <Label Grid.Column="0" Content="Edit Character" Style="{StaticResource PrimaryTitleLabel}"/>
+            <Button Grid.Column="1" x:Name="btnUpdateIdentity" Click="btnUpdateIdentity_Click" Content="Update" Style="{StaticResource CallToAction}"/>
+            <Button Grid.Column="2" x:Name="btnCancelUpdateCharacter" Content="Cancel" Click="btnCancelUpdateCharacter_Click" Style="{StaticResource BackButton}"/>
 
-        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="CornflowerBlue">
+        </Grid>
+        
+        
+        <Grid Grid.Row="1" Style="{StaticResource TabGrid}">
             <TabControl x:Name="tabEditCharacter">
                 <TabItem Header="Name">
                     <Grid>
@@ -44,33 +48,19 @@
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="1" Grid.Column="1">
-                            <Label Content="Character Name" Style="{StaticResource LeftLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.Column="2">
-                            <TextBox x:Name="txtCharacterName" />
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="1">
-                            <Label Content="First Name" Style="{StaticResource LeftLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="2">
-                            <TextBox x:Name="txtFirstName" />
-                        </Grid>
-                        <Grid Grid.Row="3" Grid.Column="1">
-                            <Label Content="Middle Name" Style="{StaticResource LeftLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="3" Grid.Column="2">
-                            <TextBox x:Name="txtMiddleName" />
-                        </Grid>
-                        <Grid Grid.Row="4" Grid.Column="1">
-                            <Label Content="Last Name" Style="{StaticResource LeftLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="4" Grid.Column="2">
-                            <TextBox x:Name="txtLastName" />
-                        </Grid>
+                        
+                        <Label Grid.Row="1" Grid.Column="1" Content="Character Name" Style="{StaticResource LeftLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" x:Name="txtCharacterName" />
 
+                        <Label Grid.Row="2" Grid.Column="1" Content="First Name" Style="{StaticResource LeftLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtFirstName" />
 
+                        <Label Grid.Row="3" Grid.Column="1" Content="Middle Name" Style="{StaticResource LeftLabel}"/>
+                        <TextBox Grid.Row="3" Grid.Column="2" x:Name="txtMiddleName" />
 
+                        <Label Grid.Row="4" Grid.Column="1" Content="Last Name" Style="{StaticResource LeftLabel}"/>
+                        <TextBox Grid.Row="4" Grid.Column="2" x:Name="txtLastName" />
+                        
                     </Grid>
                 </TabItem>
                 <TabItem Header="Traits">
@@ -79,8 +69,8 @@
                             <TabItem Header="Current Traits">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="5*"/>
-                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="1*"/>
                                     </Grid.RowDefinitions>
 
                                     <Grid Grid.Row="0">
@@ -88,34 +78,30 @@
                                             <DataGrid.Columns>
                                                 <DataGridTextColumn Header="Trait" Binding="{Binding TraitID}" Width="1*"/>
                                                 <DataGridTextColumn Header="Connotation" Binding="{Binding TraitConnotation}" Width="1*"/>
-                                                <DataGridTextColumn Header="Description" Binding="{Binding TraitDescription}" Width="2*"/>
+                                                <DataGridTextColumn Header="Description" Binding="{Binding TraitDescription}" Width="3*"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </Grid>
-                                    <Grid Grid.Row="1">
-                                        <Button x:Name="btnRemoveTrait"  Content="Remove Trait" Click="btnRemoveTrait_Click" Style="{StaticResource DangerButton}"/>
-                                    </Grid>
+                                    <Button  Grid.Row="1" x:Name="btnRemoveTrait"  Content="Remove Trait" Click="btnRemoveTrait_Click" Style="{StaticResource WarningButton}"/>
                                 </Grid>
 
                             </TabItem>
                             <TabItem Header="Add Traits">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="5*"/>
-                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="1*"/>
                                     </Grid.RowDefinitions>
                                     <Grid Grid.Row="0">
                                         <DataGrid x:Name="listTraits">
                                             <DataGrid.Columns>
                                                 <DataGridTextColumn Header="Trait" Binding="{Binding TraitID}" Width="1*"/>
                                                 <DataGridTextColumn Header="Connotation" Binding="{Binding TraitConnotation}" Width="1*"/>
-                                                <DataGridTextColumn Header="Description" Binding="{Binding TraitDescription}" Width="2*"/>
+                                                <DataGridTextColumn Header="Description" Binding="{Binding TraitDescription}" Width="3*"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </Grid>
-                                    <Grid Grid.Row="1">
-                                        <Button x:Name="btnAddTrait" Content="Add Trait" Click="btnAddTrait_Click" Style="{StaticResource CallToAction}"/>
-                                    </Grid>
+                                    <Button Grid.Row="1" x:Name="btnAddTrait" Content="Add Trait" Click="btnAddTrait_Click" Style="{StaticResource CallToActionSecondary}"/>
                                 </Grid>
                             </TabItem>
                         </TabControl>
@@ -131,28 +117,22 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="3*"/>
-                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition Height="5*"/>
+                                    <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Grid.Column="1">
-                                    <Label Content="Manage Skills" Style="{StaticResource TopLabel}"/>
-                                </Grid>
-                                <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-                                    <DataGrid x:Name="listCharacterSkills" SelectionChanged="listCharacterSkills_SelectionChanged">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Skill" Binding="{Binding SkillID}" Width="1*"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="1">
-                                    <TextBox x:Name="textUpdateSkillDescription" Style="{StaticResource Description}"/>
-                                </Grid>
-                                <Grid Grid.Row="2" Grid.Column="0">
-                                    <Button x:Name="btnUpdateSkill" Click="btnUpdateSkill_Click" Content="Update Skill" Style="{StaticResource CallToAction}"/>
-                                </Grid>
-                                <Grid Grid.Row="2" Grid.Column="1">
-                                    <Button x:Name="btnRemoveSkill" Click="btnRemoveSkill_Click" Content="Remove Skill" Style="{StaticResource DangerButton}"/>
-                                </Grid>
+                                
+                                <Label Grid.Column="2" Content="Manage Skills" Style="{StaticResource TopLabel}"/>
+
+                                <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="listCharacterSkills" SelectionChanged="listCharacterSkills_SelectionChanged">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Skill" Binding="{Binding SkillID}" Width="1*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="textUpdateSkillDescription" Style="{StaticResource Description}"/>
+
+                                <Button Grid.Row="2" Grid.Column="0" x:Name="btnRemoveSkill" Click="btnRemoveSkill_Click" Content="Remove Skill" Style="{StaticResource WarningButton}"/>
+                                <Button Grid.Row="2" Grid.Column="1" x:Name="btnUpdateSkill" Click="btnUpdateSkill_Click" Content="Update Skill" Style="{StaticResource CallToActionSecondary}"/>
 
                             </Grid>
                         </TabItem>
@@ -164,29 +144,23 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="3*"/>
-                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition Height="4*"/>
+                                    <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Grid.Column="0">
-                                    <Label  Content="Choose Skill" Style="{StaticResource TopLabel}"/>
-                                </Grid>
-                                <Grid Grid.Row="0" Grid.Column="1">
-                                    <Label  Content="Add Description" Style="{StaticResource TopLabel}"/>
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
-                                    <DataGrid x:Name="listSkills" Margin="10,0,10,10">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Skill" Binding="{Binding SkillID}" Width="1*"/>
-                                            <DataGridTextColumn Header="Category" Binding="{Binding SkillCategory}" Width="1*"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="1">
-                                    <TextBox x:Name="textSkillDescription" Style="{StaticResource Description}"/>
-                                </Grid>
-                                <Grid Grid.Row="2" Grid.Column="1">
-                                    <Button x:Name="btnAddSkill" Click="btnAddSkill_Click" Content="Add Skill" Style="{StaticResource CallToAction}"/>
-                                </Grid>
+                                
+                                <Label Grid.Row="0" Grid.Column="0" Content="Choose Skill" Style="{StaticResource TopLabel}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Content="Add Description" Style="{StaticResource TopLabel}"/>
+
+                                <DataGrid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" x:Name="listSkills" Margin="10,0,10,10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Skill" Binding="{Binding SkillID}" Width="1*"/>
+                                        <DataGridTextColumn Header="Category" Binding="{Binding SkillCategory}" Width="1*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="textSkillDescription" Style="{StaticResource Description}"/>
+                                    
+                                <Button Grid.Row="2" Grid.Column="1" x:Name="btnAddSkill" Click="btnAddSkill_Click" Content="Add Skill" Style="{StaticResource CallToActionSecondary}"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -202,38 +176,28 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="4*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
+                                
+                                <DataGrid  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="listCharacterLikes" SelectionChanged="listCharacterLikes_SelectionChanged">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Likes" Binding="{Binding CharacterInterest}" Width="1*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
 
-                                <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-                                    <DataGrid x:Name="listCharacterLikes" SelectionChanged="listCharacterLikes_SelectionChanged">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Likes" Binding="{Binding CharacterInterest}" Width="1*"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Grid>
-                                <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-                                    <DataGrid x:Name="listCharacterDislikes" SelectionChanged="listCharacterDislikes_SelectionChanged">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Dislikes" Binding="{Binding CharacterInterest}" Width="1*"/>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Grid>
-                                <Grid Grid.Row="0" Grid.Column="2">
-                                    <TextBox x:Name="textLikeDislike" />
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="2">
-                                    <TextBox x:Name="textLikeDislikeDescription" Style="{StaticResource Description}"/>
+                                <DataGrid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="listCharacterDislikes" SelectionChanged="listCharacterDislikes_SelectionChanged">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Dislikes" Binding="{Binding CharacterInterest}" Width="1*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
 
+                                <TextBox Grid.Row="0" Grid.Column="2" x:Name="textLikeDislike" />
+                                <TextBox Grid.Row="1" Grid.Column="2" x:Name="textLikeDislikeDescription" Style="{StaticResource Description}"/>
 
-                                </Grid>
-                                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Button x:Name="btnUpdateInterest"  Content="Update Like / Dislike" Click="btnUpdateInterest_Click" Style="{StaticResource CallToAction}"/>
-                                </Grid>
-                                <Grid Grid.Row="2" Grid.Column="2">
-                                    <Button x:Name="btnRemoveInterest" Content="Remove Like / Dislike" Click="btnRemoveInterest_Click" Style="{StaticResource DangerButton}"/>
-                                </Grid>
+                                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnRemoveInterest" Content="Remove Like / Dislike" Click="btnRemoveInterest_Click" Style="{StaticResource WarningButton}"/>
+                                <Button Grid.Row="2" Grid.Column="2" x:Name="btnUpdateInterest"  Content="Update Like / Dislike" Click="btnUpdateInterest_Click" Style="{StaticResource CallToActionSecondary}"/>
+
                             </Grid>
                         </TabItem>
                         <TabItem Header="Add Like or Dislike">
@@ -245,38 +209,24 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
                                     <RowDefinition Height="1*"/>
-                                    <RowDefinition Height=".75*"/>
-                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="2*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Grid.Column="0">
-                                    <Label Content="Like or Dislike:" Style="{StaticResource LeftLabel}"/>
-                                </Grid>
-                                <Grid Grid.Row="0" Grid.Column="2">
-                                    <ComboBox x:Name="comboLikeDislike">
-                                        <ComboBoxItem Content="Like"/>
-                                        <ComboBoxItem Content="Dislike"/>
-                                    </ComboBox>
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="0">
-                                    <Label  Content="Thing:" Style="{StaticResource LeftLabel}"/>
-                                </Grid>
-                                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                                    <TextBox x:Name="textLikeDislikeName" />
-                                </Grid>
 
-                                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Label Content="Description:" Style="{StaticResource TopLabel}"/>
-                                </Grid>
+                                <Label Grid.Row="0" Grid.Column="0" Content="Like or Dislike:" Style="{StaticResource LeftLabel}"/>
+                                <ComboBox Grid.Row="0" Grid.Column="2" x:Name="comboLikeDislike">
+                                    <ComboBoxItem Content="Like"/>
+                                    <ComboBoxItem Content="Dislike"/>
+                                </ComboBox>
+                                
+                                <Label Grid.Row="1" Grid.Column="0" Content="Thing:" Style="{StaticResource LeftLabel}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="textLikeDislikeName" />
 
-                                <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-                                    <TextBox x:Name="textAddLikeDislikeDescription" Style="{StaticResource Description}"/>
-                                </Grid>
+                                <Label Grid.Row="2" Grid.Column="0" Content="Description:" Style="{StaticResource TopLabel}"/>
+                                <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="textAddLikeDislikeDescription" Style="{StaticResource Description}"/>
 
-
-                                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Button x:Name="btnAddLikeOrDislike" Click="btnAddLikeOrDislike_Click"  Content="Add Like or Dislike" Style="{StaticResource CallToAction}"/>
-                                </Grid>
+                                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnAddLikeOrDislike" Click="btnAddLikeOrDislike_Click"  Content="Add Like or Dislike" Style="{StaticResource CallToActionSecondary}"/>
 
                             </Grid>
                         </TabItem>
@@ -287,7 +237,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
@@ -295,27 +245,20 @@
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Grid.ColumnSpan="2">
-                            <Label  Content="Deactivate Character?" Style="{StaticResource SecondaryTitleLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                            <TextBlock  Text="Are you sure you want to deactivate this character? This action cannot be undone!" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red"/>
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="0">
-                            <Label  Content="Verify Password" Style="{StaticResource LeftLabel}"/>
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="1">
-                            <PasswordBox x:Name="pwdDeactivateCharacter" />
-                        </Grid>
-                        <Grid Grid.Row="3" Grid.ColumnSpan="2">
-                            <Button x:Name="btnDeactivateCharacter" Content="Deactivate Character" Click="btnDeactivateCharacter_Click" Style="{StaticResource DangerButton}"/>
-                        </Grid>
+                        
+                        <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Deactivate Character?" Style="{StaticResource SecondaryTitleLabel}"/>
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Content="Are you sure you want to deactivate this character? This action cannot be undone!" Style="{StaticResource WarningLabel}"/>
+                        
+                        <Label Grid.Row="2" Grid.Column="0" Content="Verify Password" Style="{StaticResource LeftLabel}"/>
+                        <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="pwdDeactivateCharacter" />
+                        
+                        <Button Grid.Row="3" Grid.ColumnSpan="2" x:Name="btnDeactivateCharacter" Content="Deactivate Character" Click="btnDeactivateCharacter_Click" Style="{StaticResource DangerButton}"/>
                     </Grid>
                 </TabItem>
             </TabControl>
         </Grid>
         
-        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblCreated" Style="{StaticResource SmallTitleLabel}"/>
+        <Label Grid.Row="2" x:Name="lblCreated" Style="{StaticResource SmallTitleLabel}"/>
 
     </Grid>
 </Page>

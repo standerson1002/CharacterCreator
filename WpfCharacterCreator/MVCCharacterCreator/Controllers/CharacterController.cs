@@ -16,7 +16,7 @@ namespace MVCCharacterCreator.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            string user = User.Identity.Name;//_userManager.SelectUserByEmail(User.Identity.Name).Username;
+            string user = User.Identity.Name;
 
             List<UserCharacter> userCharacters = new List<UserCharacter>();
             List<UserPermission> sharedCharacters = new List<UserPermission>();
@@ -52,6 +52,7 @@ namespace MVCCharacterCreator.Controllers
                         if (permission.UserID == User.Identity.Name)
                         {
                             access = true;
+                            ViewBag.AccessType = permission.AccessType;
                             break;
                         }
                     }

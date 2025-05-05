@@ -53,7 +53,7 @@ namespace WpfCharacterCreator.Pages.Characters
         {
             try
             {
-                lblCreated.Content = "Created on " + character.CreatedAt.ToString("D") + " by " + character.CreatorID + "\tLast updated on " + character.LastEdited.ToString("D"); ;
+                lblCreated.Content = "Created on " + character.CreatedAt.ToString("D") + " by " + character.CreatorID + " | Last updated on " + character.LastEdited.ToString("D"); ;
 
                 txtCharacterName.Text = character.CharacterName;
                 txtFirstName.Text = character.CharacterFirstName;
@@ -85,15 +85,16 @@ namespace WpfCharacterCreator.Pages.Characters
             {
                 newName = character.CharacterName;
             }
-            string newFirstName = (txtFirstName.Text == "" ? null : txtFirstName.Text);
-            string newMiddleName = (txtMiddleName.Text == "" ? null : txtMiddleName.Text);
-            string newLastName = (txtLastName.Text == "" ? null : txtLastName.Text);
+            string? newFirstName = (txtFirstName.Text == "" ? null : txtFirstName.Text);
+            string? newMiddleName = (txtMiddleName.Text == "" ? null : txtMiddleName.Text);
+            string? newLastName = (txtLastName.Text == "" ? null : txtLastName.Text);
             try
             {
                 if (_characterManager.UpdateCharacter(character, newName, newFirstName, newMiddleName, newLastName))
                 {
                     character = _characterManager.GetCharacterByCharacterID(character.CharacterID);
                     main.ShowMessage("Update Success", character.CharacterName + " was updated.", "Success");
+                    NavigationService.GetNavigationService(this).Navigate(new ViewCharacter(character));
                 }
                 else
                 {

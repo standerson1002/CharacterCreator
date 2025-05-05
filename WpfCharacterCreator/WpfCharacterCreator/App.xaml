@@ -61,7 +61,8 @@
             <Setter Property="Background" Value="LimeGreen"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="LimeGreen"/>
@@ -80,7 +81,8 @@
             <Setter Property="Background" Value="DodgerBlue"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="DodgerBlue"/>
@@ -99,7 +101,8 @@
             <Setter Property="Background" Value="LightSlateGray"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="SlateGray"/>
@@ -118,7 +121,8 @@
             <Setter Property="Background" Value="Orange"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="Orange"/>
@@ -137,7 +141,8 @@
             <Setter Property="Background" Value="Red"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="Red"/>
@@ -215,11 +220,25 @@
             <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
 
+        <Style TargetType="Label" x:Key="WarningLabel">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
 
         <!-- Grids -->
         <Style TargetType="Grid" x:Key="BoxGrid">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Margin" Value="2"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="HeaderGrid">
+            <Setter Property="Background" Value="BlanchedAlmond"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="TabGrid">
+            <Setter Property="Background" Value="CornflowerBlue"/>
         </Style>
 
         <Style TargetType="DataGridColumnHeader">
@@ -309,7 +328,7 @@
         </Style>
 
         <Style TargetType="PasswordBox">
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
@@ -378,10 +397,12 @@
         <Style x:Key="MessageDefaultLabel" TargetType="Label">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         </Style>
         <Style x:Key="MessageDefaultText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         </Style>
 
         <Style x:Key="MessageErrorBackground" TargetType="StackPanel">
@@ -398,10 +419,12 @@
         <Style x:Key="MessageErrorLabel" TargetType="Label">
             <Setter Property="Foreground" Value="Red"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         </Style>
         <Style x:Key="MessageErrorText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Red"/>
             <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         </Style>
 
         <Style x:Key="MessageSuccessBackground" TargetType="StackPanel">
@@ -418,10 +441,13 @@
         <Style x:Key="MessageSuccessLabel" TargetType="Label">
             <Setter Property="Foreground" Value="Green"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
+
         </Style>
         <Style x:Key="MessageSuccessText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Green"/>
             <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         </Style>
 
 
