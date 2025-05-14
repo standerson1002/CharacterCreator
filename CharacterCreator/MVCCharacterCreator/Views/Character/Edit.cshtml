@@ -1,0 +1,421 @@
+﻿@model DataDomain.UserCharacter
+@using DataDomain
+
+@{
+    ViewData["Title"] = "Edit Character";
+
+    IEnumerable<CharacterTraitVM> traitList = ViewBag.TraitList;
+    IEnumerable<CharacterSkill> skillList = ViewBag.SkillList;
+    IEnumerable<CharacterLikeDislike> likeList = ViewBag.LikeList;
+    IEnumerable<CharacterLikeDislike> dislikeList = ViewBag.DislikeList;
+
+    IEnumerable<Trait> availableTraits = ViewBag.AvailableTraits;
+    IEnumerable<Skill> availableSkills = ViewBag.AvailableSkills;
+
+    int page = ViewBag.Page;
+}
+
+<script src="/js/likedislike.js"></script>
+
+
+<h1>Edit Character: @Model.CharacterName</h1>
+
+<h6 class="text-muted">Created on @Model.CreatedAt.ToString("MM/dd/yyyy") by @Model.CreatorID | Last edited on @Model.LastEdited.ToString("MM/dd/yyyy")</h6>
+<hr class="hr"/>
+
+<div class="mb-4">
+    @Html.ActionLink("Details", "Details", new { id = Model.CharacterID }, new { @class = "btn btn-primary" })
+    @if(Model.CreatorID == User.Identity.Name){
+        <a class="btn btn-info" asp-area="" asp-controller="Permission" asp-action="Details" asp-route-id=@Model.CharacterID>Share</a>
+        <a class="btn btn-danger" asp-area="" asp-controller="Permission" asp-action="Delete" asp-route-id=@Model.CharacterID>Delete</a>
+    }
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+<div id="tabbed" class="mb-4">
+    <ul>
+
+        @if(page == 0)
+        {
+            <li aria-selected="true" aria-expanded="true" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tabs-active ui-state-active">
+                <a href="#identity">Identity</a>
+            </li>
+        }
+        else
+        {
+            <li aria-selected="false" aria-expanded="false" tabindex="-1">
+                <a href="#identity">Identity</a>               
+            </li>
+        }
+
+        @if(page == 1)
+        {
+            <li aria-selected="true" aria-expanded="true" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tabs-active ui-state-active">
+                <a href="#traits">Traits</a>              
+            </li>
+        }
+        else
+        {
+            <li aria-selected="false" aria-expanded="false" tabindex="-1">
+                <a href="#traits">Traits</a>
+            </li>
+        }
+
+        @if (page == 2)
+        {
+            <li aria-selected="true" aria-expanded="true" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tabs-active ui-state-active">
+                <a href="#skills">Skills</a>
+            </li>
+        }
+        else
+        {
+            <li aria-selected="false" aria-expanded="false" tabindex="-1">
+                <a href="#skills">Skills</a>
+            </li>
+        }
+
+        @if (page == 3)
+        {
+            <li aria-selected="true" aria-expanded="true" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tabs-active ui-state-active">
+                <a href="#likes-and-dislikes">Likes and Dislikes</a>
+            </li>
+        }
+        else
+        {
+            <li aria-selected="false" aria-expanded="false" tabindex="-1">
+                <a href="#likes-and-dislikes">Likes and Dislikes</a>
+            </li>
+        }
+
+    </ul>
+    <div id="identity">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Identity</h4>
+                <hr class="hr"/>
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group mb-1">
+                        <label asp-for="CharacterName" class="control-label"></label>
+                        <input asp-for="CharacterName" class="form-control" maxlength="50" />
+                        <span asp-validation-for="CharacterName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label asp-for="CharacterFirstName" class="control-label"></label>
+                        <input asp-for="CharacterFirstName" class="form-control" maxlength="50" />
+                        <span asp-validation-for="CharacterFirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label asp-for="CharacterMiddleName" class="control-label"></label>
+                        <input asp-for="CharacterMiddleName" class="form-control" maxlength="50" />
+                        <span asp-validation-for="CharacterMiddleName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label asp-for="CharacterLastName" class="control-label"></label>
+                        <input asp-for="CharacterLastName" class="form-control" maxlength="50" />
+                        <span asp-validation-for="CharacterLastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save Changes" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="traits">
+        <p>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#currentTraits" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Current Traits (@traitList.Count())
+            </a>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#addTraits" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Add Traits
+            </a>
+        </p>
+        <hr class="hr" />
+        <div class="collapse show shadow mb-2" id="currentTraits">
+            <div class="card card-body">
+                <h4>Current Traits</h4>
+                <hr class="hr" />
+
+                @if (traitList.Count() == 0)
+                {
+                    <h5 class="text-warning">Your character has no traits!</h5>
+                }
+                else
+                {
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Trait</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Connotation</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            @foreach (CharacterTraitVM trait in traitList)
+                            {
+                                <tr>
+                                    <td scope="row">
+                                        @trait.TraitID
+                                    </td>
+                                    <td>
+                                        @trait.TraitDescription
+                                    </td>
+                                    <td>
+                                        <p class="text-capitalize">@trait.TraitConnotation</p>
+                                    </td>
+                                    <td align="right">
+                                        @Html.ActionLink("Remove Trait", "RemoveTrait", new { id = Model.CharacterID, traitID = trait.TraitID }, new { @class = "btn btn-outline-warning" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+        <div class="collapse shadow mb-2" id="addTraits">
+            <div class="card card-body">
+                <h4>Add Trait</h4>
+                <hr class="hr" />
+
+                @if (availableTraits.Count() == 0)
+                {
+                    <h5 class="text-warning">No available traits to add!</h5>
+                }
+                else
+                {
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Trait</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Connotation</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            @foreach (Trait trait in availableTraits)
+                            {
+                                <tr>
+                                    <td scope="row">
+                                        @trait.TraitID
+                                    </td>
+                                    <td>
+                                        @trait.TraitDescription
+                                    </td>
+                                    <td>
+                                        <p class="text-capitalize">@trait.TraitConnotation</p>
+                                    </td>
+                                    <td align="right">
+                                        @Html.ActionLink("Add Trait", "AddTrait", new { id = Model.CharacterID, traitID = trait.TraitID }, new { @class = "btn btn-outline-primary" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="skills">
+        <p>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#currentSkills" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Current Skills (@skillList.Count())
+            </a>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#addSkills" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Add Skills
+            </a>
+        </p>
+        <hr class="hr" />
+        <div class="collapse show shadow mb-2" id="currentSkills">
+            <div class="card card-body">
+                <h4>Current Skills</h4>
+                <hr class="hr" />
+                @if (skillList.Count() == 0)
+                {
+                    <h5 class="text-warning">Your character has no skills!</h5>
+                }
+                else
+                {
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Skill</th>
+                                <th scope="col">Description</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            @foreach (CharacterSkill skill in skillList)
+                            {
+                                <tr>
+                                    <td scope="row">@skill.SkillID</td>
+                                    <td>@skill.CharacterSkillDescription</td>
+                                    <td align="right">
+                                        @Html.ActionLink("Remove Skill", "RemoveSkill", new { id = Model.CharacterID, skillID = skill.SkillID }, new { @class = "btn btn-outline-warning" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+        <div class="collapse shadow mb-2" id="addSkills">
+            <div class="card card-body">
+                <h4>Add Skill</h4>
+                <hr class="hr" />
+
+                <form asp-action="AddSkill">
+
+                    <input hidden id="id" name="id" value=@Model.CharacterID />
+
+                    <div class="form-group mb-1">
+                        <label class="control-label" for="skillID">Skill</label>
+                        <select class="form-select" aria-label="Default select example" id="skillID" name="skillID">
+                            <option selected>Choose a skill</option>
+                            @foreach(Skill skill in availableSkills)
+                            {
+                                <option value="@skill.SkillID">@skill.SkillID</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="control-label" for="desc">Description</label>
+                        <input class="form-control" id="desc" name="desc"/>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Skill" class="btn btn-primary"/>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="likes-and-dislikes">
+        <p>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#currentLikeDislikes" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Current Likes (@likeList.Count()) and Dislikes (@dislikeList.Count())
+            </a>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#addLikeDislikes" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Add Likes or Dislikes
+            </a>
+        </p>
+        <hr class="hr" />
+        <div class="collapse show shadow mb-2" id="currentLikeDislikes">
+            <div class="card card-body">
+                
+                <div class="row">
+                    <div class="col">
+                        <h4>Current Likes</h4>
+                        <hr class="hr" />
+                        @if (likeList.Count() == 0)
+                        {
+                            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no likes!</h5>
+                        }
+                        else
+                        {
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Like</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    @foreach (CharacterLikeDislike like in likeList)
+                                    {
+                                        <tr>
+                                            <td scope="row">@like.CharacterInterest</td>
+                                            <td>@like.CharacterLikeDislikeDescription</td>
+                                            <td align="right">
+                                                @Html.ActionLink("Remove Like", "RemoveInterest", new { id = Model.CharacterID, interest = like.CharacterInterest, type = "like", desc = like.CharacterLikeDislikeDescription }, new { @class = "btn btn-outline-warning" })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                    <div class="col">
+                        <h4>Current Dislikes</h4>
+                        <hr class="hr" />
+                        @if (dislikeList.Count() == 0)
+                        {
+                            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no dislikes!</h5>
+                        }
+                        else
+                        {
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Dislike</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (CharacterLikeDislike dislike in dislikeList)
+                                    {
+                                        <tr>
+                                            <td scope="row">@dislike.CharacterInterest</td>
+                                            <td>@dislike.CharacterLikeDislikeDescription</td>
+                                            <td align="right">
+                                                @Html.ActionLink("Remove Disike", "RemoveInterest", new { id = Model.CharacterID, interest = dislike.CharacterInterest, type="dislike", desc=dislike.CharacterLikeDislikeDescription}, new { @class = "btn btn-outline-warning" })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="collapse shadow mb-2" id="addLikeDislikes">
+            <div class="card card-body">
+                <h4 id="like-dislike-heading">Add Like or Dislike</h4>
+                <hr class="hr" />
+
+                <form asp-action="AddLikeDislike">
+                    <input hidden id="id" name="id" value=@Model.CharacterID />
+
+                    <div class="form-group mb-1">
+                        <label class="control-label" for="likeDislikeType">Like or Dislike?</label>
+                        <select class="form-select" aria-label="Default select example" id="likeDislikeType" name="likeDislikeType">
+                            <option value="like">Like</option>
+                            <option value="dislike">Dislike</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label class="control-label" for="interest" id="like-dislike-label">Like or Dislike:</label>
+                        <input class="form-control" id="interest" name="interest" />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="control-label" for="desc">Description:</label>
+                        <input class="form-control" id="desc" name="desc" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Like or Dislike" class="btn btn-primary" id="like-dislike-button"/>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

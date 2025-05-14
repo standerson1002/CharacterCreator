@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CharacterCreator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\CharacterPermissions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\CreateCharacter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\EditCharacter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\EditCharacterPermission.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\ShareCharacter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\ViewCharacter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Characters\ViewCharacterList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Friends\ViewFriendList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Homepage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Locations\CreateLocation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Locations\EditLocation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Locations\ViewLocationList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Locations\ViewSingleLocation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\ChangePassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\Signup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Friends\ViewFriendProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\ViewOwnProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CharacterCreator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\CharacterPermissions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\CreateCharacter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\EditCharacter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\EditCharacterPermission.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\ShareCharacter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\ViewCharacter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Characters\ViewCharacterList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Friends\ViewFriendList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Homepage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Locations\CreateLocation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Locations\EditLocation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Locations\ViewLocationList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Locations\ViewSingleLocation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\Signup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Friends\ViewFriendProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\ViewOwnProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

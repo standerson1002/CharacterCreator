@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCharacterCreator", "WpfCharacterCreator\WpfCharacterCreator.csproj", "{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0CF6B062-A3E2-42E2-947C-DE40847C5AF2} = {0CF6B062-A3E2-42E2-947C-DE40847C5AF2}
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580} = {782DB486-1419-4B0A-86B6-0FDC95E2A580}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessFakes", "DataAccessFakes\DataAccessFakes.csproj", "{0FB7C881-DD64-4188-A9C5-8B4C773EB823}"
+	ProjectSection(ProjectDependencies) = postProject
+		{34FE02F4-D373-41A5-AE55-822AA4498D55} = {34FE02F4-D373-41A5-AE55-822AA4498D55}
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580} = {782DB486-1419-4B0A-86B6-0FDC95E2A580}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessInterfaces", "DataAccessInterfaces\DataAccessInterfaces.csproj", "{34FE02F4-D373-41A5-AE55-822AA4498D55}"
+	ProjectSection(ProjectDependencies) = postProject
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580} = {782DB486-1419-4B0A-86B6-0FDC95E2A580}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}"
+	ProjectSection(ProjectDependencies) = postProject
+		{34FE02F4-D373-41A5-AE55-822AA4498D55} = {34FE02F4-D373-41A5-AE55-822AA4498D55}
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580} = {782DB486-1419-4B0A-86B6-0FDC95E2A580}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDomain", "DataDomain\DataDomain.csproj", "{782DB486-1419-4B0A-86B6-0FDC95E2A580}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{0CF6B062-A3E2-42E2-947C-DE40847C5AF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0FB7C881-DD64-4188-A9C5-8B4C773EB823} = {0FB7C881-DD64-4188-A9C5-8B4C773EB823}
+		{34FE02F4-D373-41A5-AE55-822AA4498D55} = {34FE02F4-D373-41A5-AE55-822AA4498D55}
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580} = {782DB486-1419-4B0A-86B6-0FDC95E2A580}
+		{E8E672CE-0D31-4E30-BA50-2FD95DA2C211} = {E8E672CE-0D31-4E30-BA50-2FD95DA2C211}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayerTests", "LogicLayerTests\LogicLayerTests.csproj", "{EB3EDB49-B638-4E26-BE71-168A51D5B1DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCCharacterCreator", "MVCCharacterCreator\MVCCharacterCreator.csproj", "{528F9943-7A4D-40D1-A226-39038C0D5410}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB7C881-DD64-4188-A9C5-8B4C773EB823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB7C881-DD64-4188-A9C5-8B4C773EB823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB7C881-DD64-4188-A9C5-8B4C773EB823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB7C881-DD64-4188-A9C5-8B4C773EB823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FE02F4-D373-41A5-AE55-822AA4498D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FE02F4-D373-41A5-AE55-822AA4498D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FE02F4-D373-41A5-AE55-822AA4498D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FE02F4-D373-41A5-AE55-822AA4498D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782DB486-1419-4B0A-86B6-0FDC95E2A580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF6B062-A3E2-42E2-947C-DE40847C5AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF6B062-A3E2-42E2-947C-DE40847C5AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF6B062-A3E2-42E2-947C-DE40847C5AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF6B062-A3E2-42E2-947C-DE40847C5AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3EDB49-B638-4E26-BE71-168A51D5B1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3EDB49-B638-4E26-BE71-168A51D5B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3EDB49-B638-4E26-BE71-168A51D5B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3EDB49-B638-4E26-BE71-168A51D5B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528F9943-7A4D-40D1-A226-39038C0D5410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528F9943-7A4D-40D1-A226-39038C0D5410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528F9943-7A4D-40D1-A226-39038C0D5410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528F9943-7A4D-40D1-A226-39038C0D5410}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3152022D-01C5-4736-B188-E0891136A7A1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,57 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.User.ViewFriendProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages.User"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewFriendProfile">
+
+    <!-- Other User Profile -->
+    <Grid Style="{StaticResource BoxGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblOtherUserProfileUsername" Content="Username" Style="{StaticResource PrimaryTitleLabel}"/>
+
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblOtherUserFriendStatus" Style="{StaticResource TopLabel}"/>
+
+        <Image Grid.Row="2" Grid.Column="1" x:Name="imgOtherUserProfilePicture" Source="/defaultPFP.png" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtOtherUserProfileBio" IsReadOnly="True" Style="{StaticResource Description}"/>
+
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnOtherUserProfileSendFriendRequest" Click="btnOtherUserProfileSendFriendRequest_Click"  Content="Send Friend Request" Visibility="Hidden" Style="{StaticResource CallToAction}"/>
+            <Button Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnOtherUserCancelFriendRequest" Click="btnOtherUserCancelFriendRequest_Click" Content="Cancel Friend Request" Visibility="Hidden" Style="{StaticResource WarningButton}"/>
+            <Button Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnOtherUserUnfriend" Click="btnOtherUserUnfriend_Click"  Content="Unfriend User" Visibility="Hidden" Style="{StaticResource DangerButton}"/>
+
+            <Button Grid.Column="0" x:Name="btnOtherUserAcceptFriendRequest" Click="btnOtherUserAcceptFriendRequest_Click"  Content="Accept Request" Style="{StaticResource CallToAction}"/>
+            <Button Grid.Column="1" x:Name="btnOtherUserRejectFriendRequest" Click="btnOtherUserRejectFriendRequest_Click"  Content="Reject Request" Style="{StaticResource DangerButton}"/>
+
+        </Grid>
+
+        <Button Grid.Row="3" Grid.Column="2" x:Name="btnOtherUserProfileBack" Click="btnOtherUserProfileBack_Click"  Content="Back" Style="{StaticResource BackButton}"/>
+
+    </Grid>
+</Page>
+
+
+

@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.User.ViewOwnProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages.User"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewOwnProfile">
+
+    <!-- User Profile -->
+    <Grid Style="{StaticResource BoxGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblUserProfileUsername" Content="Username" Style="{StaticResource PrimaryTitleLabel}"/>
+        <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="1" x:Name="imgOtherUserProfilePicture" Source="/defaultPFP.png" Margin="10" HorizontalAlignment="Right" Visibility="Hidden"/>
+
+
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtUserProfileEmail"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtUserProfileBio" Style="{StaticResource Description}"/>
+
+        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnUserProfileEditProfile" Click="btnUserProfileEditProfile_Click" Content="Edit Profile" Style="{StaticResource WarningButton}"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="btnUserProfileSaveChanges" Click="btnUserProfileSaveChanges_Click" Content="Save Changes" Style="{StaticResource CallToAction}"/>
+
+        <Button Grid.Row="3" Grid.Column="2" x:Name="btnChangePassword" Click="btnChangePassword_Click"  Content="Change Password" Style="{StaticResource WarningButton}"/>
+
+
+    </Grid>
+
+</Page>

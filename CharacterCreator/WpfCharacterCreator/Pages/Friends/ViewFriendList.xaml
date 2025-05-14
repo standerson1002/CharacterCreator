@@ -1,0 +1,77 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.Friends.ViewFriendList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages.Friends"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewFriendList">
+
+    <Grid Style="{StaticResource BoxGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource HeaderGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Friends" Style="{StaticResource PrimaryTitleLabel}"/>
+            <TextBox Grid.Column="1" x:Name="txtSearchUsers" MaxLength="20"/>
+            <Button Grid.Column="2" x:Name="btnSearchUsers" Click="btnSearchUsers_Click"  Content="Search User" Style="{StaticResource CallToAction}"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Style="{StaticResource TabGrid}">
+            <TabControl x:Name="tabFriendOptions">
+                <TabItem x:Name="tabFriends" Header="Friends">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Row="0" x:Name="listFriends">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="User" Binding="{Binding UserFriendID}" Width="1*"/>
+                                <DataGridTextColumn Header="Friends Since" Binding="{Binding UserFriendDate}" Width="1*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Grid.Row="1" x:Name="btnViewFriendProfile" Click="btnViewFriendProfile_Click" Content="View Profile" Style="{StaticResource CallToActionSecondary}"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="tabWaiting" Header="Incoming Friend Requests">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Row="0" x:Name="listWaiting">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="User" Binding="{Binding UserFriendID}" Width="1*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Grid.Row="1" x:Name="btnViewWaitingProfile" Click="btnViewWaitingProfile_Click" Content="View Profile" Style="{StaticResource CallToActionSecondary}"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="tabPending" Header="Pending Friend Requests">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Row="0" x:Name="listPending" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="User" Binding="{Binding UserFriendID}" Width="1*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Grid.Row="1" x:Name="btnViewPendingProfile" Click="btnViewPendingProfile_Click" Content="View Profile" Style="{StaticResource CallToActionSecondary}"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        
+    </Grid>
+</Page>

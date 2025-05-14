@@ -1,0 +1,94 @@
+﻿@model DataDomain.Locations.Location
+@using DataDomain.Locations
+
+@{
+    ViewData["Title"] = "Edit";
+    IEnumerable<Country> countries = ViewBag.Countries;
+    IEnumerable<Subdivision> subdivisions = ViewBag.Subdivisions;
+    IEnumerable<City> cities = ViewBag.Cities;
+}
+
+<script src="/js/locations.js"></script>
+
+
+<h1>Edit Location</h1>
+
+<h4>@Model.LocationName</h4>
+<hr class="hr"/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" id="editForm" class="mb-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="LocationID" class="control-label"></label>
+                <input asp-for="LocationID" class="form-control" value="@Model.LocationID"/>
+                <span asp-validation-for="LocationID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationName" class="control-label"></label>
+                <input asp-for="LocationName" class="form-control" />
+                <span asp-validation-for="LocationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationCountry" class="control-label" for="LocationCountry">Country</label>
+                <select asp-for="LocationCountry" class="form-select" aria-label="Default select example" id="LocationCountry" name="LocationCountry">
+                    <option value="Unspecified" selected>Unspecified</option>
+                    @foreach (Country country in countries)
+                    {
+                        <option value="@country.CountryID">@country.CountryID</option>
+                    }
+                </select>
+                <span asp-validation-for="LocationCountry" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationSubdivisionID" class="control-label" for="LocationSubdivisionID">Subdivision</label>
+                <select asp-for="LocationSubdivisionID" class="form-select" aria-label="Default select example" id="LocationSubdivisionID" name="LocationSubdivisionID">
+                    <option value="0" selected>Unspecified</option>
+                    @foreach (Subdivision subdivision in subdivisions)
+                    {
+                        <option value="@subdivision.SubdivisionID" class="@subdivision.SubdivisionCountry.Replace(" ", "-")">@subdivision.SubdivisionName</option>
+                    }
+                </select>
+                <span asp-validation-for="LocationSubdivisionID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationCityID" class="control-label" for="LocationCityID">City</label>
+                <select asp-for="LocationCityID" class="form-select" aria-label="Default select example" id="LocationCityID" name="LocationCityID">
+                    <option selected>Unspecified</option>
+                    @foreach (City city in cities)
+                    {
+                        <option value="@city.CityID" class="@city.CityCountry.Replace(" ", "-") @city.CitySubdivisionID">@city.CityName</option>
+                    }
+                </select>
+                <span asp-validation-for="LocationCityID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationAddress" class="control-label"></label>
+                <input asp-for="LocationAddress" class="form-control" />
+                <span asp-validation-for="LocationAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="LocationDescription" class="control-label"></label>
+                <input asp-for="LocationDescription" class="form-control" />
+                <span asp-validation-for="LocationDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="CreatorID" class="control-label"></label>
+                <input asp-for="CreatorID" class="form-control" value="@Model.CreatorID"/>
+                <span asp-validation-for="CreatorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">View All Locations</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

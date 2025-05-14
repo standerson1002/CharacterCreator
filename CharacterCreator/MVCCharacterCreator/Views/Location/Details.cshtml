@@ -1,0 +1,44 @@
+﻿@model DataDomain.Locations.Location
+
+@{
+    ViewData["Title"] = "Location Details";
+}
+
+<h1>
+    @Html.DisplayFor(model => model.LocationName)
+</h1>
+
+<div>
+    <h4>
+        @Html.DisplayFor(model => model.LocationCity),
+        @if(Model.LocationSubdivision != null)
+        {
+            @Html.DisplayFor(model => model.LocationSubdivision)
+        }
+        <i>@Html.DisplayFor(model => model.LocationCountry)</i>
+    </h4>
+    <hr />
+
+    <div class="row">
+        <div>
+            @Html.DisplayFor(model => model.LocationAddress)
+        </div>
+        <div class = "col-sm-10">
+            @if(Model.LocationDescription != "" && Model.LocationDescription != null)
+            {
+                @Html.DisplayFor(model => model.LocationDescription)
+            }
+            else 
+            {
+                <p class="text-muted">This location has no description.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<hr class="hr" />
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LocationID }, new {@class="btn btn-warning"})
+    <a asp-action="Index" class="btn btn-secondary">View all Locations</a>
+</div>

@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfCharacterCreator.Pages.Characters.ShareCharacter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCharacterCreator.Pages.Characters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShareCharacter">
+
+    <!-- Share Character -->
+    <Grid Style="{StaticResource BoxGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblShareCharacterName" Content="Share Character" Style="{StaticResource PrimaryTitleLabel}"/>
+
+        <Label Grid.Row="1" Grid.Column="1" Content="User" Style="{StaticResource TopLabel}"/>
+        <Label Grid.Row="1" Grid.Column="2" Content="Access Type" Style="{StaticResource TopLabel}"/>
+
+        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="comboFriendShare" Style="{StaticResource ComboUnder}"/>
+
+        <ComboBox Grid.Row="2" Grid.Column="2" x:Name="comboAccessType" Style="{StaticResource ComboUnder}">
+            <ComboBoxItem Content="Viewer"/>
+            <ComboBoxItem Content="Editor"/>
+        </ComboBox>
+
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btnConfirmShareCharacter" Click="btnConfirmShareCharacter_Click"  Content="Share" Style="{StaticResource CallToAction}"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="btnCancelShareCharacter" Click="btnCancelShareCharacter_Click"  Content="Cancel" Style="{StaticResource BackButton}"/>
+
+    </Grid>
+
+</Page>

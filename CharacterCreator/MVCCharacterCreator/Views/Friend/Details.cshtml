@@ -1,0 +1,83 @@
+﻿@using DataDomain
+@model DataDomain.User
+
+@{
+    ViewData["Title"] = "Details";
+    UserFriend friend = ViewBag.Relationship;
+    string relationship = friend.UserFriendStatus;
+}
+
+<h3>@Html.DisplayFor(model => model.Username)'s Profile</h3>
+<div class="row">
+    @if (relationship == "friend")
+    {
+        <h5 class="lead">Friends Since: @friend.UserFriendDate</h5>
+    }
+    else if (relationship == "pending")
+    {
+        <h5 class="lead">You have sent a friend request </h5>
+    }
+    else if (relationship == "waiting")
+    {
+        <h5 class="lead">Waiting approval</h5>
+    }
+</div>
+<div>
+    <hr class="hr"/>
+    <div class="row">
+            @* <h5>@Html.DisplayFor(model => model.Email)</h5> *@
+            @if(Model.AccountBio == "" || Model.AccountBio == null){
+                <p class="text-muted">No bio written.</p>
+            } else {
+                <p>@Html.DisplayFor(model => model.AccountBio)</p>
+            }
+    </div>
+    <hr class="hr" />
+    <div>
+        @* @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) | *@
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+        @if (relationship == "friend")
+        {
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeFriend">
+                Remove Friend
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="removeFriend" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content border border-danger">
+                        <div class="modal-header bg-danger">
+                            <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Remove Friend</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-danger">
+                            Are you sure you want to remove @Html.DisplayFor(model => model.Username) as a friend?
+                        </div>
+                        <div class="modal-footer">
+                            @Html.ActionLink("Remove Friend", "Delete", new { id = Model.Username }, new { @class = "btn btn-danger" })
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (relationship == "pending")
+        {
+            @Html.ActionLink("Cancel Friend Request", "Cancel", new { id = Model.Username }, new { @class = "btn btn-warning" })
+        }
+        else if (relationship == "waiting")
+        {
+            @Html.ActionLink("Accept Friend Request", "Accept", new { id = Model.Username }, new { @class = "btn btn-success" })
+            <span> </span>
+            @Html.ActionLink("Reject Friend Request", "Reject", new { id = Model.Username }, new { @class = "btn btn-danger" })
+        }
+        else
+        {
+            @Html.ActionLink("Send Friend Request", "Send", new { id = Model.Username }, new { @class = "btn btn-primary" })
+        }
+    </div>
+        @* <dd class = "col-sm-10"> *@
+        @*     @Html.DisplayFor(model => model.ProfilePicture) *@
+        @* </dd> *@
+</div>
