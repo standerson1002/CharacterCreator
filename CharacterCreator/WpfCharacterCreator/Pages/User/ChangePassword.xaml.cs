@@ -52,35 +52,40 @@ namespace WpfCharacterCreator.Pages.User
 
             try
             {
-                if (email == "")
+                if (email == "") // check if email is blank
                 {
                     txtChangePasswordEmail.Focus();
                     throw new Exception("Email cannot be empty.");
                 }
-                else if (oldPassword == "")
+                else if (main.Email != email) // check if email matches current user
+                {
+                    txtChangePasswordEmail.Focus();
+                    throw new Exception("Incorrect email address.");
+                }
+                else if (oldPassword == "") // check if old password is blank
                 {
                     pwdOldPassword.Focus();
                     throw new Exception("Old password cannot be empty.");
                 }
-                else if (newPassword == "")
+                else if (newPassword == "") // check if new password is blank
                 {
                     pwdNewPassword.Focus();
                     throw new Exception("New password cannot be empty.");
                 }
-                else if (newPassword.Length > 100)
+                else if (newPassword.Length < 6) // check if new password is too short
+                {
+                    pwdNewPassword.Focus();
+                    throw new Exception("Password needs to be at least 6 characters.");
+                }
+                else if (newPassword.Length > 100) // check if new password is too long
                 {
                     pwdNewPassword.Focus();
                     throw new Exception("New Password cannot be more than 100 characters.");
                 }
-                else if (newPassword != verifyNewPassword)
+                else if (newPassword != verifyNewPassword) // check if passwords are different
                 {
                     pwdConfrimNewPassword.Focus();
                     throw new Exception("Passwords do not match.");
-                }
-                else if (main.Email != email)
-                {
-                    txtChangePasswordEmail.Focus();
-                    throw new Exception("Incorrect email address.");
                 }
                 else
                 {

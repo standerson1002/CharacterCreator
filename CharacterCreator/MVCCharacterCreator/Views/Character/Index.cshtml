@@ -10,7 +10,7 @@
 <p class="lead">These are your characters and the characters your friends have shared with you!</p>
 <hr class="hr"/>
 <div class="d-grid gap-2 mb-3">
-    <a asp-action="Create" class="btn btn-outline-primary btn-block"><i class="person-add"></i>Create New Character</a>
+    <a asp-action="Create" class="btn btn-outline-primary btn-block">Create New Character</a>
 </div>
 <div id="tabbed">
     <ul>
@@ -24,7 +24,7 @@
         @if (@Model.Count() == 0)
         {
             <h5 class="text-warning">You don't have any characters yet!</h5>
-            <a asp-action="Create" class="btn btn-outline-success shadow">Create My First Character!</a>
+            @* <a asp-action="Create" class="btn btn-outline-success shadow">Create My First Character!</a> *@
         }
         else
         {

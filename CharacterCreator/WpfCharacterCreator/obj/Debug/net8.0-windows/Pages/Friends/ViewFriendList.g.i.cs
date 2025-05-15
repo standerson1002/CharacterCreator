@@ -149,7 +149,7 @@ namespace WpfCharacterCreator.Pages.Friends {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/pages/friends/viewfriendlist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/pages/friends/viewfriendlist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Friends\ViewFriendList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

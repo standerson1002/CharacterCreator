@@ -125,7 +125,7 @@ namespace WpfCharacterCreator {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/charactercreator.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/charactercreator.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CharacterCreator.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

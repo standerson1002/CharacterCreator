@@ -9,12 +9,12 @@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
 
-    @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVCCharacterCreator.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="bg-page">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 bg-light border-bottom">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 border-bottom">
             <div class="container container-fluid navigation">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Character Creator</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -38,7 +38,7 @@
             </div>
         </nav>
     </header>
-    <div class="container mb-3">
+    <div class="container mb-3 bg-main">
         <main role="main" class="pb-3">
 
             @if (TempData["MessagePrimary"] != null)
@@ -97,9 +97,8 @@
 
 
     <footer class="bg-body-tertiary text-center fixed-bottom">
-        @* <div class="p-4 bg-secondary"></div> *@
-        <div class="text-center p-3 bg-light border-top">
-            <a class="" asp-area="" asp-controller="Home" asp-action="Privacy">Character Creator © 2025</a>
+        <div class="text-center p-3 border-top">
+            <a class="footer-nav" asp-area="" asp-controller="Home" asp-action="Privacy">Character Creator © 2025</a>
         </div>
     </footer>
 

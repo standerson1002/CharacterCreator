@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ihYU9VA+nNKtDTTWSG+dAHV6diyqJqyaUUr6yj2g3Bk=",
+  "Hash": "yzIsoGfCcl/w+/den9wz2QO5cEVdP5WkbIqK7B7GtPQ=",
   "Source": "MVCCharacterCreator",
   "BasePath": "_content/MVCCharacterCreator",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0ye00hs0hu",
-      "Integrity": "WBAMLVfRUWOoHngrAcP6cWcPZBVys99TD7R3zPECeLs=",
+      "Fingerprint": "mhjxbi6g9t",
+      "Integrity": "FkyThLPv9Uu7PD0VcIJG0TfARoTmaP9/xuAsfXswwnk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -6171,51 +6171,6 @@
       ]
     },
     {
-      "Route": "css/site.0ye00hs0hu.css",
-      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2698"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"WBAMLVfRUWOoHngrAcP6cWcPZBVys99TD7R3zPECeLs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 01:00:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0ye00hs0hu"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-WBAMLVfRUWOoHngrAcP6cWcPZBVys99TD7R3zPECeLs="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -6226,7 +6181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2698"
+          "Value": "575"
         },
         {
           "Name": "Content-Type",
@@ -6234,11 +6189,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WBAMLVfRUWOoHngrAcP6cWcPZBVys99TD7R3zPECeLs=\""
+          "Value": "\"FkyThLPv9Uu7PD0VcIJG0TfARoTmaP9/xuAsfXswwnk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 01:00:59 GMT"
+          "Value": "Thu, 15 May 2025 22:14:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6248,7 +6203,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WBAMLVfRUWOoHngrAcP6cWcPZBVys99TD7R3zPECeLs="
+          "Value": "sha256-FkyThLPv9Uu7PD0VcIJG0TfARoTmaP9/xuAsfXswwnk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.mhjxbi6g9t.css",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "575"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FkyThLPv9Uu7PD0VcIJG0TfARoTmaP9/xuAsfXswwnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 22:14:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mhjxbi6g9t"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FkyThLPv9Uu7PD0VcIJG0TfARoTmaP9/xuAsfXswwnk="
         }
       ]
     },

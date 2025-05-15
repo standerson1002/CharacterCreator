@@ -13,16 +13,17 @@ namespace DataDomain
         public int CharacterID { get; set; }
         public string CreatorID { get; set; }
 
-        [Required][DisplayName("Character")]
+        [Required(ErrorMessage = "Please enter a valid character name.")]
+        [DisplayName("Character")][StringLength(50)]
         public string CharacterName { get; set; }
 
-        [DisplayName("First Name")]
+        [DisplayName("First Name")][StringLength(50)]
         public string? CharacterFirstName { get; set; }
 
-        [DisplayName("Last Name")]
+        [DisplayName("Last Name")][StringLength(50)]
         public string? CharacterLastName { get; set; }
 
-        [DisplayName("Middle Name")]
+        [DisplayName("Middle Name")][StringLength(50)]
         public string? CharacterMiddleName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastEdited { get; set; }

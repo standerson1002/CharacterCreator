@@ -643,5 +643,51 @@ namespace LogicLayerTests
         }
 
 
+
+        [TestMethod]
+        public void TestSelectAllUsers()
+        {
+            // arrange
+            int expectedCount = 5;
+            int actualCount = 0;
+
+            // act
+            actualCount = _userManager.SelectAllUsers().Count();
+
+            // assert
+            Assert.AreEqual(expectedCount, actualCount);
+
+        }
+
+        
+        [TestMethod]
+        public void TestSelectUserByEmailIsSuccessful()
+        {
+            // arrange
+            string email = "test1@test.com";
+            string expectedUsername = "test1";
+            string actualUsername = "";
+
+            // act
+            actualUsername = _userManager.SelectUserByEmail(email).Username;
+
+            // assert
+            Assert.AreEqual(expectedUsername, actualUsername);
+        }
+
+        [TestMethod][ExpectedException(typeof(NullReferenceException))]
+        public void TestSelectUserByEmailFailsWithInvalidEmail()
+        {
+            // arrange
+            string email = "test3@test.com";
+            string username = "test3";
+
+            // act
+            username = _userManager.SelectUserByEmail(email).Username;
+
+            // assert not needed
+        }
+
+
     }
 }

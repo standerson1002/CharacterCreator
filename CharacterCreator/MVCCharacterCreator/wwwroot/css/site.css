@@ -1,158 +1,45 @@
-:root {
-    --pink-primary: #ed025c;
-    --pink-medium-dark: #cf1150;
-    --pink-light: #ffe2e2;
-    --pink-lighter: #ffe2e2;
+html {
+    height: 82.5%;
 }
 
-
-html {
-    font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-html {
-  position: relative;
-  min-height: 100%;
-}
 body {
-    background-color: var(--pink-light);
-    /*    font-family: Lucida Console;*/
+    height: 100%;
 }
 
+.bg-page {
+    background-color: coral;
+}
+
+.bg-main {
+    background-color: white;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 nav {
-    background-color: var(--pink-primary);
-    border-bottom: solid 3px var(--pink-medium-dark);
-    padding: 100px;
+    background-color: blanchedalmond;
 }
 
-.navigation {
-    background-color: white;
-    border: solid 2px var(--pink-medium-dark);
-    padding: 5px;
+.nav-link, .navbar-brand {
+    color: slateblue;
+}
+.nav-link:hover, .navbar-brand:hover {
+    color: cornflowerblue;
 }
 
-
-main {
-    background-color: white;
-    border: solid 2px var(--pink-medium-dark);
-    height: 100%;
-    padding: 15px;
-}
 
 
 footer {
-    border-top: solid 3px var(--pink-medium-dark);
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-    bottom: 0;
+    background-color: blanchedalmond;
+    color: slateblue;
 }
 
-footer div {
-    border: solid 2px var(--pink-medium-dark);
+.footer-nav {
+    color: slateblue;
 }
-
-h1 {
-    color: var(--pink-medium-dark);
-    padding-bottom: 5px;
-    border-bottom: double 5px var(--pink-medium-dark);
+.footer-nav:hover {
+    color: cornflowerblue;
 }
-
-/*#tabbed {
-    background-color: var(--pink-primary);
-    color: white;
-    border: solid 1px var(--pink-primary);
-    border-radius: 0px;
-    border-bottom: dashed 2px var(--pink-medium-dark);
-    padding: 2px;
-}
-
-#tabbed ul {
-    background-color: var(--pink-light);
-    border: solid 2px var(--pink-medium-dark);
-    border-bottom: none;
-    border-radius: 0px;
-}
-
-#tabbed ul li {
-    background-color: var(--pink-primary);
-    border: solid 2px var(--pink-medium-dark);
-    border-bottom: none;
-    border-radius: 0px;
-}
-
-#tabbed div {
-    background-color: white;
-    border: solid 2px var(--pink-medium-dark);
-    border-radius: 0px;
-}
-
-#tabbed div div{
-    border: none;
-} */
-
-.form-group {
-    border: none;
-}
-
-h4 {
-    color: var(--pink-medium-dark);
-}
-
-
-
-label {
-    color: var(--pink-medium-dark);
-}
-
-input {
-    border: solid 1px var(--pink-medium-dark);
-    background-color: white;
-}
-
-
-table {
-    padding: 2px;
-    width: 100%;
-}
-
-tbody {
-    padding: 2px;
-    color: var(--pink-medium-dark);
-    background-color: white;
-}
-
-thead {
-    padding: 2px;
-    color: white;
-    background-color: var(--pink-medium-dark);
-}
-
-
-
-tr {
-    padding: 2px;
-}
-
-tbody tr:hover{
-    background-color: var(--pink-light);
-}
-
-tbody td:hover{
-    
-}
-
-
-
 

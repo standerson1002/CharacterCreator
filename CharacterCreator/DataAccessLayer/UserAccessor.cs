@@ -201,17 +201,18 @@ namespace DataAccessLayer
 
                 if (reader.HasRows)
                 {
-                    reader.Read();
-
-                    User user = new User()
+                    while (reader.Read())
                     {
-                        Username = reader.GetString(0),
-                        Email = reader.GetString(1),
-                        ProfilePicture = reader.GetString(2),
-                        AccountBio = reader.GetString(3),
-                        Active = reader.GetBoolean(4)
-                    };
-                    users.Add(user);
+                        User user = new User()
+                        {
+                            Username = reader.GetString(0),
+                            Email = reader.GetString(1),
+                            ProfilePicture = reader.GetString(2),
+                            AccountBio = reader.GetString(3),
+                            Active = reader.GetBoolean(4)
+                        };
+                        users.Add(user);
+                    }
                 }
                 else
                 {

@@ -166,7 +166,7 @@ namespace DataAccessFakes
 
         public List<User> SelectAllUsers()
         {
-            throw new NotImplementedException();
+            return _users;
         }
 
         public List<UserFriend> SelectFriendRequests(string user)
@@ -201,7 +201,18 @@ namespace DataAccessFakes
 
         public User SelectUserByEmail(string email)
         {
-            throw new NotImplementedException();
+            User result = null;
+
+            foreach(User user in _users)
+            {
+                if(user.Email == email)
+                {
+                    result = user;
+                    break;
+                }
+            }
+
+            return result;
         }
 
         public User SelectUserByUsername(string username)

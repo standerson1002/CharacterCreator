@@ -21,7 +21,7 @@ CREATE TABLE [dbo].[UserAccount] (
 	[Email]				[nvarchar](100)				NOT NULL,
 	[ProfilePicture]	[nvarchar](250)				NOT NULL	DEFAULT '',
 	[AccountBio]		[nvarchar](500)				NOT NULL	DEFAULT '',
-	[PasswordHash]		[nvarchar](100)				NOT NULL	DEFAULT '9c9064c59f1ffa2e174ee754d2979be80dd30db552ec03e7e327e9b1a4bd594e',
+	[PasswordHash]		[nvarchar](100)				NOT NULL	DEFAULT 'b03ddf3ca2e714a6548e7495e2a03f5e824eaac9837cd7f159c67b90fb4b7342',
 	[Active]			[bit]						NOT NULL	DEFAULT 1,
 	
 	CONSTRAINT [pk_userid] PRIMARY KEY ([UserID] ASC),

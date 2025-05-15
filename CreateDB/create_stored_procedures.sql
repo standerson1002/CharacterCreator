@@ -318,6 +318,7 @@ AS
 		FROM		[UserCharacter]
 		WHERE		[CreatorID] = @UserID
 			AND		[Active] = 1
+		ORDER BY	[LastEdited] DESC
 	END
 GO
 

@@ -10,21 +10,21 @@ namespace DataDomain
 {
     public class UserPermission
     {
-        [Required]
-        [DisplayName("User")]
+        [Required(ErrorMessage = "Please enter a valid username.")]
+        [DisplayName("Username")][StringLength(20)]
         public string UserID {  get; set; }
 
-        [Required]
-        [DisplayName("Creator")]
+        [Required(ErrorMessage = "Please enter the valid creator.")]
+        [DisplayName("Creator")][StringLength(20)]
         public string CreatorID { get; set; }
 
         [Required]
         public int CharacterID { get; set; }
 
-        [DisplayName("Character")]
+        [DisplayName("Character")][StringLength(50)]
         public string CharacterName {  get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid access type.")]
         [DisplayName("Access Type")]
         public string AccessType { get; set; }
     }

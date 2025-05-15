@@ -2,6 +2,7 @@
 using LogicLayer;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace WpfCharacterCreator.Pages
 {
@@ -73,6 +75,11 @@ namespace WpfCharacterCreator.Pages
                     pwdChoosePassword.Focus();
                     throw new Exception("Password cannot be empty");
                 }
+                else if (password.Length < 6) // check if password is too short
+                {
+                    pwdChoosePassword.Focus();
+                    throw new Exception("Password needs to be at least 6 characters.");
+                }
                 else if (password.Length > 100) // check if password is too long
                 {
                     pwdChoosePassword.Focus();
@@ -88,7 +95,8 @@ namespace WpfCharacterCreator.Pages
                     if (_userManager.CreateNewAccount(username, email, password))
                     {
                         DataDomain.User user = _userManager.RetrieveUserByUsername(username);
-                        main.UserChanged(user);
+                        main.UserChanged(null);
+                        main.ShowMessage("Account Created", "Your account was created. Please log in again to continue.", "Default");
                     }
                     else
                     {
@@ -103,9 +111,6 @@ namespace WpfCharacterCreator.Pages
 
 
         }
-
-
-
 
 
 
