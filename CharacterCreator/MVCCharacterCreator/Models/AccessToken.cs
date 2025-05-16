@@ -19,7 +19,7 @@
             }
 
             LogicLayer.UserManager employeeManager = new LogicLayer.UserManager();
-            //_legacyUser = employeeManager.RetrieveUserByUsername(username);
+            _legacyUser = employeeManager.SelectUserByEmail(email);
             //_roles = employeeManager.GetRolesForEmployee(_legacyUser.EmployeeID);
         }
 
@@ -27,5 +27,8 @@
         public string Username { get { return _legacyUser.Username; } }
         public string Email { get { return _legacyUser.Email; } }
         public List<String> Roles { get { return _roles; } }
+
+
+
     }
 }

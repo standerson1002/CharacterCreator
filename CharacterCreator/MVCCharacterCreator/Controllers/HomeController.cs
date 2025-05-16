@@ -9,6 +9,7 @@ namespace MVCCharacterCreator.Controllers
 {
     public class HomeController : Controller
     {
+        private LogicLayer.UserManager userManager = new LogicLayer.UserManager();
 
         // new to include identity manager classes
         private UserManager<IdentityUser> _userManager;
@@ -26,6 +27,8 @@ namespace MVCCharacterCreator.Controllers
             _signInManager = signInManager;
 
             _logger = logger;
+
+            // getAccessToken();
         }
 
 
@@ -43,7 +46,9 @@ namespace MVCCharacterCreator.Controllers
                 {
                     _accessToken = new AccessToken(email);
                 }
-                catch { }
+                catch 
+                {
+                }
             }
             else
             {

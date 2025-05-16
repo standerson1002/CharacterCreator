@@ -22,7 +22,9 @@ INSERT INTO [dbo].[UserFriendStatusType]
 	VALUES
 	('friend'),
 	('pending'),
-	('waiting')
+	('waiting'),
+	('blocker'),
+	('blocked')
 GO
 
 /* ======================================================
@@ -44,7 +46,7 @@ GO
 INSERT INTO [dbo].[SkillCategory]
 		([SkillCategoryID])
 	VALUES
-	('Music'),('Art'),('Athlete'),('Computer'),('Smart'),('Math'),('Science'),('Social'),('Unspecified')
+	('Music'),('Art'),('Athlete'),('Smart'),('Math'),('Science'),('Social'),('Food'),('Unspecified')
 GO
 
 /* ======================================================
@@ -65,22 +67,27 @@ INSERT INTO [dbo].[SkillType]
 	('Sketching','Art'),('Drawing','Art'),('Painting','Art'),('Oil Pastels','Art'),
 	('Scuplting','Art'),('Pottery','Art'),('Print-making','Art'),('Glasswork','Art'),('Ceramics','Art'),
 	('Graphic Design','Art'),('Digital Art','Art'),
+	('Carpentry','Art'),('Crafting','Art'),('Building','Art'),
 	-- Athletic
 	('Running','Athlete'),('Long Jump','Athlete'),('Swimming','Athlete'),('Rock Climbing','Athlete'),
 	('Baseball','Athlete'),('Basketball','Athlete'),('American Football','Athlete'),('Soccer','Athlete'),
 	('Cricket','Athlete'),('Rugby','Athlete'),('Golf','Athlete'),('Tennis','Athlete'),('Pickle Ball','Athlete'),
 	('Volleyball','Athlete'),('Ping Pong','Athlete'),('Wrestling','Athlete'),('Boxing','Athlete'),('Kickball','Athlete'),
 	('Dodgeball','Athlete'),
-	-- Computer
-	('Programing','Computer'),
 	-- Smart
-	('Chess','Smart'),('Writing','Smart'),('Business','Smart'),
+	('Programing','Smart'),('Chess','Smart'),('Writing','Smart'),('Business','Smart'),('Poetry','Smart'),('Finance','Smart'),
+	('Project Management','Smart'),('Law','Smart'),('Researching','Smart'),('Teaching','Smart'),
 	-- Math
 	('Statistics','Math'),('Algebra','Math'),('Calculus','Math'),
 	-- Science
-	('Biology','Science'),('Astrometry','Science'),('Geography','Science'),('Geology','Science'),('Genetics','Science'),
+	('Robotics','Science'),('Biology','Science'),('Astrometry','Science'),('Geography','Science'),('Geology','Science'),('Genetics','Science'),
+	('Chemistry','Science'),('Physics','Science'),('Psychology','Science'),
 	-- Social
-	('Acting','Social')
+	('Acting','Social'),('Comedy','Social'),('Leadership','Social'),('Communication','Social'),
+	-- Food
+	('Cooking','Food'),('Baking','Food'),('Grilling','Food'),('Mixology','Food'),
+	-- Unspecified
+	('Cleaning','Unspecified')
 GO
 
 /* ======================================================
