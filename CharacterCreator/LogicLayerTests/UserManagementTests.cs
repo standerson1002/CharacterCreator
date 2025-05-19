@@ -689,5 +689,73 @@ namespace LogicLayerTests
         }
 
 
+        // block and unblock tests
+
+        [TestMethod]
+        public void TestBlockUserWithoutRelationshipIsSuccessful()
+        {
+            // arrange
+            string user = "test1";
+            string otherUser = "test2";
+            bool expectedResult = true;
+            bool actualResult = false;
+
+            // act
+            actualResult = _userManager.BlockUser(user, otherUser);
+
+            // assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+        [TestMethod]
+        public void TestBlockUserWithRelationshipIsSuccessful()
+        {
+            // arrange
+            string user = "test1";
+            string otherUser = "test5";
+            bool expectedResult = true;
+            bool actualResult = false;
+
+            // act
+            actualResult = _userManager.BlockUser(user, otherUser);
+
+            // assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void TestUnblockValidUserIsSuccessful()
+        {
+            // arrange
+            string user = "test5";
+            string otherUser = "test3";
+            bool expectedResult = true;
+            bool actualResult = false;
+
+            // act
+            actualResult = _userManager.UnblockUser(user, otherUser);
+
+            // assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void TestUnblockValidUserIsInvalid()
+        {
+            // arrange
+            string user = "test1";
+            string otherUser = "test3";
+            bool expectedResult = false;
+            bool actualResult = true;
+
+            // act
+            actualResult = _userManager.UnblockUser(user, otherUser);
+
+            // assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
     }
 }

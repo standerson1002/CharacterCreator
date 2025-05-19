@@ -66,6 +66,8 @@ namespace WpfCharacterCreator.Pages.User
             {
                 UserFriend? friend = _userManager.RetrieveFriendStatus(user, _otherUser.Username);
 
+                btnBlockUnblockUser.Content = "Block User";
+
                 if (friend == null)
                 {
                     btnOtherUserProfileSendFriendRequest.Visibility = Visibility.Visible;
@@ -87,6 +89,15 @@ namespace WpfCharacterCreator.Pages.User
                         lblOtherUserFriendStatus.Content = _otherUser.Username + " Has Sent You a Friend Request";
                         btnOtherUserAcceptFriendRequest.Visibility = Visibility.Visible;
                         btnOtherUserRejectFriendRequest.Visibility = Visibility.Visible;
+                    }
+                    else if(friend.UserFriendStatus == "blocked")
+                    {
+                        lblOtherUserFriendStatus.Content = "You Have Blocked " + _otherUser.Username;
+                        btnBlockUnblockUser.Content = "Unblock User";
+                    }
+                    else if(friend.UserFriendStatus == "blocker")
+                    {
+                        NavigationService.GetNavigationService(this).Navigate(new ViewFriendList());
                     }
                     else
                     {
@@ -217,8 +228,57 @@ namespace WpfCharacterCreator.Pages.User
             determineRelationship();
         }
 
+        private void btnBlockUnblockUser_Click(object sender, RoutedEventArgs e)
+        {
+            string? content = btnBlockUnblockUser.Content.ToString();
+            
+            try
+            {
+                if (content != null)
+                {
+                    bool result = false;
 
-
-
+                    if (content == "Block User")
+                    {
+                        MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to block this user?", "Block User?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        if(messageBoxResult == MessageBoxResult.Yes)
+                        {
+                            result = _userManager.BlockUser(main.Username, _otherUser.Username);
+                            if (result)
+                            {
+                                main.ShowMessage("User Blocked", "The user was blocked", "Success");
+                            }
+                            else
+                            {
+                                throw new Exception("Error blocking user.");
+                            }
+                        }
+                        
+                    }
+                    else if (content == "Unblock User")
+                    {
+                        result = _userManager.UnblockUser(main.Username, _otherUser.Username);
+                        if (result)
+                        {
+                            main.ShowMessage("User Unblocked", "The user was blocked", "Success");
+                        }
+                        else
+                        {
+                            throw new Exception("Error unblocking user.");
+                        }
+                    }
+                }
+                else
+                {
+                    throw new Exception("Invalid relationship type.");
+                }
+            }
+            catch (Exception ex)
+            {
+                main.ShowMessage("Error", ex.Message, "Error");
+            }
+            
+            determineRelationship();
+        }
     }
 }

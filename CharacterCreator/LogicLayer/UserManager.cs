@@ -349,5 +349,37 @@ namespace LogicLayer
 
             return users;
         }
+
+        public bool BlockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            try
+            {
+                result = _userAccessor.BlockUser(user, otherUser);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result;
+        }
+
+        public bool UnblockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            try
+            {
+                result = _userAccessor.UnblockUser(user, otherUser);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result;
+        }
     }
 }

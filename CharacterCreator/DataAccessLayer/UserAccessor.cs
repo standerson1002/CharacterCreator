@@ -40,6 +40,63 @@ namespace DataAccessLayer
             return result;
         }
 
+        public bool BlockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            var conn = DatabaseConnection.GetConnection();
+            var cmd = new SqlCommand("sp_block_user", conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@Blocker", SqlDbType.NVarChar, 20);
+            cmd.Parameters.Add("@Blocked", SqlDbType.NVarChar, 20);
+            cmd.Parameters["@Blocker"].Value = user;
+            cmd.Parameters["@Blocked"].Value = otherUser;
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                result = SelectUserFriendStatus(user, otherUser).UserFriendStatus == "blocked"
+                      && SelectUserFriendStatus(otherUser, user).UserFriendStatus == "blocker";
+            }
+            catch (Exception)
+            {
+                // throw;
+            }
+
+            return result;
+        }
+
+        public bool UnblockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            var conn = DatabaseConnection.GetConnection();
+            var cmd = new SqlCommand("sp_unblock_user", conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@Blocker", SqlDbType.NVarChar, 20);
+            cmd.Parameters.Add("@Blocked", SqlDbType.NVarChar, 20);
+            cmd.Parameters["@Blocker"].Value = user;
+            cmd.Parameters["@Blocked"].Value = otherUser;
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result;
+        }
+        
+
+
         public bool CancelPendingFriendRequest(string user, string otherUser)
         {
             bool result = false;

@@ -30,5 +30,8 @@ namespace LogicLayer
         bool RemoveFriend(string user, string otherUser);
         bool RejectFriendRequest(string user, string otherUser);
         bool AcceptFriendRequest(string user, string otherUser);
+
+        bool BlockUser(string user, string otherUser);
+        bool UnblockUser(string user, string otherUser);
     }
 }

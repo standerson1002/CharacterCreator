@@ -27,5 +27,9 @@ namespace DataAccessInterfaces
         bool DenyFriendRequest(string user, string otherUser);
         bool AcceptFriendRequest(string user, string otherUser);
 
+        bool BlockUser(string user, string otherUser);
+        bool UnblockUser(string user, string otherUser);
+
+
     }
 }

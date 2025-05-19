@@ -2,6 +2,7 @@
 using DataDomain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -80,12 +81,70 @@ namespace DataAccessFakes
                 UserFriendStatus = "friend",
                 UserFriendDate = DateTime.Now.AddDays(0).ToString()
             });
+            _friends.Add(new UserFriend()
+            {
+                UserID = "test5",
+                UserFriendID = "test3",
+                UserFriendStatus = "blocked",
+                UserFriendDate = null
+            });
 
         }
 
         public bool AcceptFriendRequest(string user, string otherUser)
         {
             return UserFriendHelper(user, otherUser, "waiting", "friend");
+        }
+
+        public bool BlockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            foreach (UserFriend friend in _friends)
+            {
+                if (friend.UserID == user && friend.UserFriendID == otherUser)
+                {
+                    friend.UserFriendStatus = "blocked";
+                    result = true;
+                    break;
+                }
+            }
+            if(!result)
+            {
+                _friends.Add(new UserFriend()
+                {
+                    UserID = user,
+                    UserFriendID = otherUser,
+                    UserFriendStatus = "blocked"
+                });
+
+                result = true;
+            }
+
+            return result;
+        }
+
+        public bool UnblockUser(string user, string otherUser)
+        {
+            bool result = false;
+
+            foreach (UserFriend friend in _friends)
+            {
+                if (friend.UserID == user && friend.UserFriendID == otherUser)
+                {
+                    if(friend.UserFriendStatus == "blocked")
+                    {
+                        result = true;
+                        break;
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+            }
+
+            return result;
         }
 
         public bool CancelPendingFriendRequest(string user, string otherUser)
@@ -267,6 +326,8 @@ namespace DataAccessFakes
             }
             throw new ArgumentException("No Relationship");
         }
+
+
 
         public bool UpdateAccountBio(string username, string oldBio, string newBio)
         {

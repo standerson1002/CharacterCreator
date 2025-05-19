@@ -19,8 +19,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
@@ -49,6 +49,8 @@
         </Grid>
 
         <Button Grid.Row="3" Grid.Column="2" x:Name="btnOtherUserProfileBack" Click="btnOtherUserProfileBack_Click"  Content="Back" Style="{StaticResource BackButton}"/>
+
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnBlockUnblockUser" Content="Block User" Style="{StaticResource LinkButton}" Click="btnBlockUnblockUser_Click"/>
 
     </Grid>
 </Page>

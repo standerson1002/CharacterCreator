@@ -59,7 +59,7 @@ namespace WpfCharacterCreator.Pages.Friends
             {
                 int friend = listFriends.SelectedIndex;
                 string userFriend = userFriends[friend].UserFriendID;
-                if (friend == null)
+                if (userFriend == null)
                 {
                     throw new Exception("No user selected.");
                 }
@@ -82,7 +82,7 @@ namespace WpfCharacterCreator.Pages.Friends
             {
                 int waiting = listWaiting.SelectedIndex;
                 string userFriend = waitingRequests[waiting].UserFriendID;
-                if (waiting == null)
+                if (userFriend == null)
                 {
                     throw new Exception("No user selected.");
                 }
@@ -105,7 +105,7 @@ namespace WpfCharacterCreator.Pages.Friends
             {
                 int pending = listPending.SelectedIndex;
                 string userFriend = pendingRequests[pending].UserFriendID;
-                if (pending == null)
+                if (userFriend == null)
                 {
                     throw new Exception("No user selected.");
                 }
@@ -139,7 +139,17 @@ namespace WpfCharacterCreator.Pages.Friends
                     DataDomain.User otherUser = _userManager.RetrieveUserByUsername(otherUsername);
                     if (otherUser != null)
                     {
-                        NavigationService.GetNavigationService(this).Navigate(new ViewFriendProfile(otherUser));
+                        UserFriend? relationship = _userManager.RetrieveFriendStatus(main.Username, otherUser.Username);
+                        bool blocked = relationship != null && relationship.UserFriendStatus == "blocker";
+                        if (blocked)
+                        {
+                            txtSearchUsers.Focus();
+                            throw new Exception("Invalid user.");
+                        }
+                        else
+                        {
+                            NavigationService.GetNavigationService(this).Navigate(new ViewFriendProfile(otherUser));
+                        }
                     }
                     else
                     {

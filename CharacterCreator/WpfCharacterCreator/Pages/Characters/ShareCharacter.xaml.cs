@@ -41,7 +41,7 @@ namespace WpfCharacterCreator.Pages.Characters
             try
             {
                 List<string> availableFriends = new List<string>();
-                List<UserFriend> friends = _userManager.RetrieveFriendList("user");
+                List<UserFriend> friends = _userManager.RetrieveFriendList(main.Username);
                 List<UserPermission> permissions = _characterManager.GetAccessForCharacter(character.CharacterID);
 
                 foreach (UserFriend friend in friends)

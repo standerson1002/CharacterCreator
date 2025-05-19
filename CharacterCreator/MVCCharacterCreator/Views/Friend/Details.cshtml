@@ -21,6 +21,10 @@
     {
         <h5 class="lead">Waiting approval</h5>
     }
+    else if (relationship == "blocked")
+    {
+        <h5 class="lead">You have blocked this user</h5>
+    }
 </div>
 <div>
     <hr class="hr"/>
@@ -72,11 +76,22 @@
             <span> </span>
             @Html.ActionLink("Reject Friend Request", "Reject", new { id = Model.Username }, new { @class = "btn btn-danger" })
         }
-        else
+        else if (relationship == null)
         {
             @Html.ActionLink("Send Friend Request", "Send", new { id = Model.Username }, new { @class = "btn btn-primary" })
         }
     </div>
+
+    @if(relationship == "blocked")
+    {
+        @Html.ActionLink("Unblock User", "Unblock", new { id = Model.Username })
+    }
+    else 
+    {
+        @Html.ActionLink("Block User", "Block", new { id = Model.Username })
+    }
+
+
         @* <dd class = "col-sm-10"> *@
         @*     @Html.DisplayFor(model => model.ProfilePicture) *@
         @* </dd> *@

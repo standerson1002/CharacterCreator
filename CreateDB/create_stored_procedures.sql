@@ -144,6 +144,54 @@ AS
 	END
 GO
 
+
+CREATE PROCEDURE [dbo].[sp_block_user]
+	(
+		@Blocker					[nvarchar](20),
+		@Blocked					[nvarchar](20)
+	)
+AS
+	BEGIN
+		DELETE FROM		[UserFriend]
+		WHERE			[UserID] = @Blocker
+			AND			[UserFriendID] = @Blocked
+		DELETE FROM		[UserFriend]
+		WHERE			[UserID] = @Blocked
+			AND			[UserFriendID] = @Blocker
+		INSERT INTO [dbo].[UserFriend]
+			([UserID],[UserFriendID],[UserFriendStatus])
+		VALUES
+			(@Blocker,@Blocked,'blocked'),
+			(@Blocked,@Blocker,'blocker')
+		DELETE FROM		[UserPermission]
+		WHERE			[CreatorID] = @Blocker
+			AND			[UserID] = @Blocked
+		DELETE FROM		[UserPermission]
+		WHERE			[CreatorID] = @Blocked
+			AND			[UserID] = @Blocker
+	END
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_unblock_user]
+	(
+		@Blocker					[nvarchar](20),
+		@Blocked					[nvarchar](20)
+	)
+AS
+	BEGIN
+		DELETE FROM		[UserFriend]
+		WHERE			[UserID] = @Blocker
+			AND			[UserFriendID] = @Blocked
+			AND			[UserFriendStatus] = 'blocked'
+		DELETE FROM		[UserFriend]
+		WHERE			[UserID] = @Blocked
+			AND			[UserFriendID] = @Blocker
+			AND			[UserFriendStatus] = 'blocker'
+	END
+GO
+
+
 CREATE PROCEDURE [dbo].[sp_send_friend_request]
 	(
 		@UserID						[nvarchar](20),
@@ -259,6 +307,12 @@ AS
 		WHERE			[UserID] = @UserFriendID
 			AND			[UserFriendID] = @UserID
 			AND			[UserFriendStatus] = 'friend'
+		DELETE FROM		[UserPermission]
+		WHERE			[CreatorID] = @UserID
+			AND			[UserID] = @UserFriendID
+		DELETE FROM		[UserPermission]
+		WHERE			[CreatorID] = @UserFriendID
+			AND			[UserID] = @UserID
 	END
 GO
 
