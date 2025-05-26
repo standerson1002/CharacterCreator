@@ -51,10 +51,10 @@ GO
 INSERT INTO [dbo].[Country]
 		([CountryID],[CountryNationality],[CountryDescription])
 	VALUES
-	('Cape Verde','Cape Verdean','Also known as Cabo Verde.'),
+	('Cabo Verde','Cabo Verdean','Also known as Cape Verde.'),
 	('Czechia','Czech','Also known as the Czech Republic.'),
-	('East Timor','East Timorese','Also known as Timor-Leste.'),
-	('Ivory Coast','Ivorian','Also known as Cote dIvoire.'),
+	('Timor-Leste','Timor-Lesteese','Also known as East Timor.'),
+	('Ivory Coast','Ivorian',"Also known as Cote d'Ivoire."),
 	('Myanmar','Burmese','Also known as Burma.'),
 	('Turkey','Turkish','Also known as Turkiye.'),
 	('United Kingdom','British','Includes England, Wales, Scotland, and Northern Ireland.'),
@@ -275,7 +275,7 @@ INSERT INTO [dbo].[City]
 	VALUES
 	('Phnom Penh','Cambodia'),('Takeo','Cambodia'),('Sinhanoukville','Cambodia'),('Battambang','Cambodia'),('Siem Reap','Cambodia'),('Paoy Paet','Cambodia'),('Kampong Chhnang','Cambodia'),('Kanpong Cham','Cambodia'),('Pursat','Cambodia'),('Ta Khmau','Cambodia'),
 	('Douala','Cameroon'),('Yaounde','Cameroon'),('Garoura','Cameroon'),('Kousseri','Cameroon'),('Bamenda','Cameroon'),('Maroura','Cameroon'),('Bafoussam','Cameroon'),('Mokolo','Cameroon'),('Ngaoundere','Cameroon'),('Bertoua','Cameroon'),
-	('Praia','Cape Verde'),('Mindelo','Cape Verde'),('Espargos','Cape Verde'),('Assomada','Cape Verde'),('Pedra Badejo','Cape Verde'),
+	('Praia','Cabo Verde'),('Mindelo','Cabo Verde'),('Espargos','Cabo Verde'),('Assomada','Cabo Verde'),('Pedra Badejo','Cabo Verde'),
 	('Bangui','Central African Republic'),('Bimbo','Central African Republic'),('Berberati','Central African Republic'),('Carnot','Central African Republic'),('Bambari','Central African Republic'),('Bouar','Central African Republic'),('Bossangoa','Central African Republic'),('Bria','Central African Republic'),('Bangassou','Central African Republic'),('Nola','Central African Republic'),
 	('NDjamena','Chad'),('Moundou','Chad'),('Sarh','Chad'),('Abeche','Chad'),('Kelo','Chad'),('Koumra','Chad'),('Pala','Chad'),('Am Timan','Chad'),('Mongo','Chad'),('Bongor','Chad'),
 	('Santaigo','Chile'),('Puente Alto','Chile'),('Antofagasta','Chile'),('Vina del Mar','Chile'),('Valparaiso','Chile'),('Talcahuano','Chile'),('San Bernardo','Chile'),('Temuco','Chile'),('Iquique','Chile'),('Concepcion','Chile'),
@@ -299,7 +299,7 @@ GO
 INSERT INTO [dbo].[City]
 	([CityName],[CityCountry])
 	VALUES
-	('Dili','East Timor'),('Maliana','East Timor'),('Suai','East Timor'),('Likisa','East Timor'),('Aileu','East Timor'),
+	('Dili','Timor-Leste'),('Maliana','Timor-Leste'),('Suai','Timor-Leste'),('Likisa','Timor-Leste'),('Aileu','Timor-Leste'),
 	('Guayaquil','Ecuador'),('Quito','Ecuador'),('Cuenca','Ecuador'),('Santo Domingo de los Colorados','Ecuador'),('Machala','Ecuador'),('Manta','Ecuador'),('Portoviejo','Ecuador'),('Eloy Alfaro','Ecuador'),('Esmeraldas','Ecuador'),('Ambata','Ecuador'),
 	('Cairo','Egypt'),('Alexandria','Egypt'),('Giza','Egypt'),('Port Said','Egypt'),('Suez','Egypt'),('Al Mahallah al Kubra','Egypt'),('Luxor','Egypt'),('Asyut','Egypt'),('Al Mansurah','Egypt'),('Tanda','Egypt'),('Al Fayyum','Egypt'),('Zagazig','Egypt'),('Ismailia','Egypt'),('Kafr ad Dawwar','Egypt'),('Aswan','Egypt'),
 	('San Salvador','El Salvador'),('Soyapango','El Salvador'),('Santa Ana','El Salvador'),('San Miguel','El Salvador'),('Mejicanos','El Salvador'),('Santa Tecla','El Salvador'),('Apopa','El Salvador'),('Delgado','El Salvador'),('Sonsonate','El Salvador'),('San Marcos','El Salvador'),

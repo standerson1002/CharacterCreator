@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCharacterCreator"
         mc:Ignorable="d"
-        Title="Character Creator" Height="720" Width="1280">
+        Title="Character Creator" Height="720" Width="1280" Icon="/logo.png">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,2">

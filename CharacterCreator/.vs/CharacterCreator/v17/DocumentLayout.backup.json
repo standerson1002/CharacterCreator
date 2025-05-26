@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\charactercreator.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\charactercreator.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}|DataAccessLayer\\DataAccessLayer.csproj|c:\\charactercreator\\character-creator\\charactercreator\\dataaccesslayer\\useraccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8E672CE-0D31-4E30-BA50-2FD95DA2C211}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\useraccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,15 +31,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T20:05:16.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CharacterCreator.xaml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\CharacterCreator.xaml",
+              "RelativeDocumentMoniker": "WpfCharacterCreator\\CharacterCreator.xaml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\CharacterCreator.xaml",
+              "RelativeToolTip": "WpfCharacterCreator\\CharacterCreator.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-26T20:02:46.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserAccessor.cs",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataAccessLayer\\UserAccessor.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\UserAccessor.cs",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataAccessLayer\\UserAccessor.cs",
               "RelativeToolTip": "DataAccessLayer\\UserAccessor.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAgwFcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T17:07:20.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T17:07:20.404Z"
             }
           ]
         }
