@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\pages\\characters\\editcharacter.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\pages\\characters\\editcharacter.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\pages\\locations\\editlocation.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\pages\\locations\\editlocation.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\pages\\locations\\editlocation.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\pages\\locations\\editlocation.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\pages\\characters\\editcharacter.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\pages\\characters\\editcharacter.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -22,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,20 +46,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditLocation.xaml.cs",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml.cs",
+              "RelativeDocumentMoniker": "WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml.cs",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml.cs",
+              "RelativeToolTip": "WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T18:11:13.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditLocation.xaml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml",
+              "RelativeDocumentMoniker": "WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml",
+              "RelativeToolTip": "WpfCharacterCreator\\Pages\\Locations\\EditLocation.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-02T18:11:04.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EditCharacter.xaml.cs",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml.cs",
+              "RelativeDocumentMoniker": "WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml.cs",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml.cs",
+              "RelativeToolTip": "WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml.cs",
+              "ViewState": "AgIAAG0CAAAAAAAAAADwv3cCAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T17:46:53.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditCharacter.xaml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml",
+              "RelativeDocumentMoniker": "WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml",
+              "RelativeToolTip": "WpfCharacterCreator\\Pages\\Characters\\EditCharacter.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-02T17:46:46.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "MVCCharacterCreator\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-26T20:05:16.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "CharacterCreator.xaml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\CharacterCreator.xaml",
               "RelativeDocumentMoniker": "WpfCharacterCreator\\CharacterCreator.xaml",
@@ -54,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "UserAccessor.cs",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataAccessLayer\\UserAccessor.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\UserAccessor.cs",

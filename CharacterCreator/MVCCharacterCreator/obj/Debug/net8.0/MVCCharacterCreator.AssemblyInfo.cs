@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVCCharacterCreator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acdf3d105f402aa8def3ba0c0640f4eea76e250e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e13256245c6d849dba06df14a4fbe3b0df1d3f1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MVCCharacterCreator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVCCharacterCreator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

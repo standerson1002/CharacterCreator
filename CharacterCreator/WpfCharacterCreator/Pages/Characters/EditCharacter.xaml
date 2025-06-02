@@ -215,7 +215,7 @@
                                 </Grid.RowDefinitions>
 
                                 <Label Grid.Row="0" Grid.Column="0" Content="Like or Dislike:" Style="{StaticResource LeftLabel}"/>
-                                <ComboBox Grid.Row="0" Grid.Column="2" x:Name="comboLikeDislike">
+                                <ComboBox Grid.Row="0" Grid.Column="2" x:Name="comboLikeDislike" SelectionChanged="comboLikeDislike_SelectionChanged">
                                     <ComboBoxItem Content="Like"/>
                                     <ComboBoxItem Content="Dislike"/>
                                 </ComboBox>

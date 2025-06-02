@@ -523,6 +523,8 @@ namespace WpfCharacterCreator.Pages.Characters
                     btnUpdateInterest.Content = "Update Dislike";
                     btnRemoveInterest.Content = "Remove Dislike";
                 }
+
+                listCharacterLikes.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -545,6 +547,8 @@ namespace WpfCharacterCreator.Pages.Characters
                     btnUpdateInterest.Content = "Update Like";
                     btnRemoveInterest.Content = "Remove Like";
                 }
+
+                listCharacterDislikes.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -614,6 +618,35 @@ namespace WpfCharacterCreator.Pages.Characters
             }
         }
 
+        private void comboLikeDislike_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            comboLikeDislike_Selected(sender, e);
+        }
 
+        private void comboLikeDislike_Selected(object sender, RoutedEventArgs e)
+        {
+            main.ClearMessage();
+
+            try
+            {
+                string type = comboLikeDislike.SelectedIndex == 0 ? "Like" : "Dislike";
+
+                if (type == "Like" || type == "Dislike")
+                {
+                    btnAddLikeOrDislike.Content = "Add " + type;
+                }
+                else
+                {
+                    throw new Exception("Invalid type: " + type);
+                }
+
+                comboLikeDislike.Text = type;
+            }
+            catch (Exception ex)
+            {
+                main.ShowMessage("Error Selecting Like or Dislike Type", ex.Message, "Error");
+            }
+
+        }
     }
 }
