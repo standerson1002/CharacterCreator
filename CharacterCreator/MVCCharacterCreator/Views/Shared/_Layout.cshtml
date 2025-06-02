@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-utilities.css" />
 
+    <link rel="icon" href="~/Images/logo.png" />
+
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -43,7 +45,7 @@
         <main role="main" class="pb-3">
             @if (TempData["MessagePrimary"] != null)
             {
-                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <div class="alert alert-primary alert-dismissible fade show small-caps" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     @TempData["MessagePrimary"]
                 </div>
@@ -51,7 +53,7 @@
 
             @if (TempData["MessageSecondary"] != null)
             {
-                <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <div class="alert alert-secondary alert-dismissible fade show small-caps" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     @TempData["MessageSecondary"]
                 </div>
@@ -59,7 +61,7 @@
 
             @if (TempData["MessageWarning"] != null)
             {
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <div class="alert alert-warning alert-dismissible fade show small-caps" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     @TempData["MessageWarning"]
                 </div>
@@ -67,7 +69,7 @@
 
             @if (TempData["MessageDanger"] != null)
             {
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show small-caps" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     @TempData["MessageDanger"]
                 </div>
@@ -75,7 +77,7 @@
 
             @if (TempData["MessageSuccess"] != null)
             {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="alert alert-success alert-dismissible fade show small-caps" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     @TempData["MessageSuccess"]
                 </div>
@@ -92,8 +94,6 @@
             @RenderBody()
         </main>
     </div>
-
-
 
 
     <footer class="bg-body-tertiary text-center fixed-bottom">

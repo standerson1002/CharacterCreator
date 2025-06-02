@@ -93,7 +93,8 @@ namespace WpfCharacterCreator.Pages.Characters {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/pages/characters/characterpermissions.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/pages/characters/characterpermissions.xam" +
+                    "l", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Characters\CharacterPermissions.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

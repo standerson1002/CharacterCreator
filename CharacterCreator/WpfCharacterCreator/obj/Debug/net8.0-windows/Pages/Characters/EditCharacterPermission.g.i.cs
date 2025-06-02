@@ -101,7 +101,8 @@ namespace WpfCharacterCreator.Pages.Characters {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/pages/characters/editcharacterpermission.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/pages/characters/editcharacterpermission." +
+                    "xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Characters\EditCharacterPermission.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

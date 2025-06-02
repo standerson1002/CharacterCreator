@@ -20,16 +20,15 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Choose a Name For Your New Character" Style="{StaticResource SecondaryTitleLabel}"/>
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Choose a Name For Your New Character" Style="{StaticResource SecondaryTitleLabel}"/>
         
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtPickNameForNewCharacter"/>
 
-        <Button Grid.Row="4" Grid.Column="1" x:Name="btnCreateCreateNewCharacter" Click="btnCreateCreateNewCharacter_Click" Content="Create" Style="{StaticResource CallToAction}"/>
-        <Button Grid.Row="4" Grid.Column="2" x:Name="btnCancelCreateNewCharacter" Click="btnCancelCreateNewCharacter_Click" Content="Cancel" Style="{StaticResource BackButton}"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCreateCreateNewCharacter" Click="btnCreateCreateNewCharacter_Click" Content="Create" Style="{StaticResource CallToAction}"/>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="btnCancelCreateNewCharacter" Click="btnCancelCreateNewCharacter_Click" Content="Cancel" Style="{StaticResource BackButton}"/>
 
     </Grid>
 </Page>

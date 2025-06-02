@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\MVCCharacterCreator.htxki4iq82.bundle.scp.css"
     },
     {
+      "Id": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\cityquizio.png",
+      "PackagePath": "staticwebassets\\Images\\cityquizio.png"
+    },
+    {
+      "Id": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\logo.png"
+    },
+    {
       "Id": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

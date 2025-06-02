@@ -43,7 +43,7 @@
         <div id="traits">
             @if(traitList.Count() == 0)
             {
-                <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no traits!</h5>
+                <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) has no traits!</h5>
             }
             else
             {
@@ -72,7 +72,7 @@
     <div id="skills">
         @if(skillList.Count() == 0)
         {
-            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no skills!</h5>
+            <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) has no skills!</h5>
         }
         else
         {
@@ -91,7 +91,7 @@
             <div id="likes" class="col">
                 @if (likeList.Count() == 0)
                 {
-                    <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) doesn't like anything!</h5>
+                    <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) doesn't like anything!</h5>
                 }
                 else
                 {
@@ -108,7 +108,7 @@
             <div id="dislikes" class="col">
                 @if(dislikeList.Count() == 0)
                 {
-                    <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) doesn't dislike anything!</h5>
+                    <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) doesn't dislike anything!</h5>
                 }
                 else
                 {

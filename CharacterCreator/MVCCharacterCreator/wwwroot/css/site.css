@@ -29,8 +29,6 @@ nav {
     color: cornflowerblue;
 }
 
-
-
 footer {
     background-color: blanchedalmond;
     color: slateblue;
@@ -43,3 +41,203 @@ footer {
     color: cornflowerblue;
 }
 
+.small-caps {
+    font-variant-caps: all-small-caps;
+}
+
+.none-yet-message {
+    color: coral;
+}
+
+h1, .PrimaryTitleLabel {
+    color: darkslateblue;
+    background-color: white;
+    border: 1px solid darkslateblue;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: central;
+    text-align: center;
+    align-content: center;
+}
+
+h2, h3 {
+    color: black;
+    font-style: italic;
+    text-align: left;
+}
+
+h4 {
+    color: darkslateblue;
+    font-weight: bold;
+    vertical-align: central;
+    text-align: left;
+    align-content: stretch;
+}
+
+label {
+    color: slateblue;
+    font-weight: bold;
+}
+
+.btn-success {
+    border: 1px solid green;
+    border-radius: 3px;
+    background-color: limegreen;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-success:hover {
+    border: 1px solid green;
+    background-color: lightblue;
+    color: green;
+}
+
+.btn-primary {
+    border: 1px solid blue;
+    border-radius: 3px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-primary:hover {
+    border: 1px solid blue;
+    background-color: lightblue;
+    color: blue;
+}
+
+.btn-secondary {
+    border: 1px solid darkslateblue;
+    border-radius: 3px;
+    background-color: lightslategrey;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-secondary:hover {
+    border: 1px solid darkslateblue;
+    background-color: lightgrey;
+    color: darkslateblue;
+}
+
+.btn-warning {
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: orange;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-warning:hover {
+    border: 1px solid red;
+    background-color: yellow;
+    color: orange;
+}
+
+.btn-danger {
+    border: 1px solid maroon;
+    border-radius: 3px;
+    background-color: red;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-danger:hover {
+    border: 1px solid maroon;
+    background-color: lightcoral;
+    color: maroon;
+}
+
+.btn-info {
+    border: 1px solid darkcyan;
+    border-radius: 3px;
+    background-color: cyan;
+    color: darkcyan;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-info:hover {
+    border: 1px solid darkcyan;
+    background-color: lightcyan;
+    color: darkcyan;
+}
+
+
+.btn-outline-primary {
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    background-color: transparent;
+    color: dodgerblue;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-outline-primary:hover {
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.btn-outline-secondary {
+    border: 1px solid lightslategrey;
+    border-radius: 3px;
+    background-color: transparent;
+    color: lightslategrey;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-outline-secondary:hover {
+    border: 1px solid lightslategrey;
+    background-color: lightslategrey;
+    color: white;
+}
+
+.btn-outline-warning {
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: transparent;
+    color: orange;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-outline-warning:hover {
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+}
+
+.btn-outline-danger {
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: transparent;
+    color: red;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-outline-danger:hover {
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+}
+
+.btn-outline-info {
+    border: 1px solid cyan;
+    border-radius: 3px;
+    background-color: transparent;
+    color: cyan;
+    font-weight: normal;
+    text-align: center;
+}
+.btn-outline-info:hover {
+    border: 1px solid cyan;
+    background-color: cyan;
+    color: white;
+}
+
+
+thead {
+    background-color: coral;
+    color: white;
+    font-weight: bold;
+}

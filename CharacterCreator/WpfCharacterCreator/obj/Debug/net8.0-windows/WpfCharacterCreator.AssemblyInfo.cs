@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfCharacterCreator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e13256245c6d849dba06df14a4fbe3b0df1d3f1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+249b4e0367e2e192dbd0f145112f0d902705ae42")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfCharacterCreator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfCharacterCreator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

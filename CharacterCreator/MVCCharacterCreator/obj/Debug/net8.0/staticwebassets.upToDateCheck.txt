@@ -1,5 +1,7 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Images\cityquizio.png
+wwwroot\Images\logo.png
 wwwroot\js\likedislike.js
 wwwroot\js\locations.js
 wwwroot\js\site.js

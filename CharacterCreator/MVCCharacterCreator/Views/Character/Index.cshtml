@@ -23,7 +23,7 @@
         <hr class="hr" />
         @if (@Model.Count() == 0)
         {
-            <h5 class="text-warning">You don't have any characters yet!</h5>
+            <h5 class="none-yet-message">You don't have any characters yet!</h5>
             @* <a asp-action="Create" class="btn btn-outline-success shadow">Create My First Character!</a> *@
         }
         else
@@ -75,7 +75,7 @@
         <div class="row">
             @if(characters.Count() == 0)
             {
-                <h5 class="text-warning">You don't have any characters shared with you yet!</h5>
+                <h5 class="none-yet-message">You don't have any characters shared with you yet!</h5>
             }
             else
             {

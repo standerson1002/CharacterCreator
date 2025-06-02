@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jC/vHR17XFGtLXOWMVAv8HcH1ZhnwDf/JBaKUSjgkYs=",
+  "Hash": "f/mlmjG1xSrIDo3bobSX+8ZkjAdc5uRvVNLB2XpzdSc=",
   "Source": "MVCCharacterCreator",
   "BasePath": "_content/MVCCharacterCreator",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xkh5k8gs8z",
-      "Integrity": "v2PyfV5UJxCtrNVplDmNlnv4t+m+6+qbYbRznujq7y4=",
+      "Fingerprint": "t0ccjrt7x9",
+      "Integrity": "3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\cityquizio.png",
+      "SourceId": "MVCCharacterCreator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\",
+      "BasePath": "_content/MVCCharacterCreator",
+      "RelativePath": "Images/cityquizio#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kck608c8e1",
+      "Integrity": "hIxCTSTEfKZzPlVHnZZXtometdy9mf0ZkAsssdamlGQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\cityquizio.png"
+    },
+    {
+      "Identity": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\logo.png",
+      "SourceId": "MVCCharacterCreator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\",
+      "BasePath": "_content/MVCCharacterCreator",
+      "RelativePath": "Images/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qd8rqfqz8x",
+      "Integrity": "LrmzUPldjawDMSNLHC+VTs+PSKm4gZuBebub/fWB7dY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
     },
     {
       "Identity": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\js\\likedislike.js",
@@ -6181,7 +6223,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "600"
+          "Value": "4700"
         },
         {
           "Name": "Content-Type",
@@ -6189,11 +6231,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v2PyfV5UJxCtrNVplDmNlnv4t+m+6+qbYbRznujq7y4=\""
+          "Value": "\"3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 22:16:22 GMT"
+          "Value": "Mon, 02 Jun 2025 21:02:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6203,12 +6245,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-v2PyfV5UJxCtrNVplDmNlnv4t+m+6+qbYbRznujq7y4="
+          "Value": "sha256-3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg="
         }
       ]
     },
     {
-      "Route": "css/site.xkh5k8gs8z.css",
+      "Route": "css/site.t0ccjrt7x9.css",
       "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6218,7 +6260,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "600"
+          "Value": "4700"
         },
         {
           "Name": "Content-Type",
@@ -6226,11 +6268,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v2PyfV5UJxCtrNVplDmNlnv4t+m+6+qbYbRznujq7y4=\""
+          "Value": "\"3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 22:16:22 GMT"
+          "Value": "Mon, 02 Jun 2025 21:02:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6240,7 +6282,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xkh5k8gs8z"
+          "Value": "t0ccjrt7x9"
         },
         {
           "Name": "label",
@@ -6248,7 +6290,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-v2PyfV5UJxCtrNVplDmNlnv4t+m+6+qbYbRznujq7y4="
+          "Value": "sha256-3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg="
         }
       ]
     },
@@ -8551,6 +8593,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "Images/cityquizio.kck608c8e1.png",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\cityquizio.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "281340"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hIxCTSTEfKZzPlVHnZZXtometdy9mf0ZkAsssdamlGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 21:53:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kck608c8e1"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/cityquizio.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hIxCTSTEfKZzPlVHnZZXtometdy9mf0ZkAsssdamlGQ="
+        }
+      ]
+    },
+    {
+      "Route": "Images/cityquizio.png",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\cityquizio.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "281340"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hIxCTSTEfKZzPlVHnZZXtometdy9mf0ZkAsssdamlGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 21:53:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hIxCTSTEfKZzPlVHnZZXtometdy9mf0ZkAsssdamlGQ="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.png",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1536419"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LrmzUPldjawDMSNLHC+VTs+PSKm4gZuBebub/fWB7dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 20:01:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LrmzUPldjawDMSNLHC+VTs+PSKm4gZuBebub/fWB7dY="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.qd8rqfqz8x.png",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\Images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1536419"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LrmzUPldjawDMSNLHC+VTs+PSKm4gZuBebub/fWB7dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 20:01:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd8rqfqz8x"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LrmzUPldjawDMSNLHC+VTs+PSKm4gZuBebub/fWB7dY="
         }
       ]
     },

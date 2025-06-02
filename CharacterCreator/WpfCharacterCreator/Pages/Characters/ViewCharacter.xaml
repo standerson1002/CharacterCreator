@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <Label  Grid.Column="0" x:Name="lblCharacterNameProfile" Content="Name" Style="{StaticResource PrimaryTitleLabel}"/>
-            <Button Grid.Column="1" x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Content="Share" Style="{StaticResource CallToActionSecondary}"/>
+            <Button Grid.Column="1" x:Name="btnShareCharacter" Click="btnShareCharacter_Click" Content="Share" Style="{StaticResource InfoButton}"/>
             <Button Grid.Column="2" x:Name="btnEditCharacter" Click="btnEditCharacter_Click"  Content="Edit" Style="{StaticResource WarningButton}"/>
 
         </Grid>

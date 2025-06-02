@@ -16,5 +16,5 @@ C:\CharacterCreator\Character-Creator\CharacterCreator\WpfCharacterCreator\App.x
 219-799333892
 CharacterCreator.xaml;MainWindow.xaml;Pages\Characters\CharacterPermissions.xaml;Pages\Characters\CreateCharacter.xaml;Pages\Characters\EditCharacter.xaml;Pages\Characters\EditCharacterPermission.xaml;Pages\Characters\ShareCharacter.xaml;Pages\Characters\ViewCharacter.xaml;Pages\Characters\ViewCharacterList.xaml;Pages\Friends\ViewFriendList.xaml;Pages\Friends\ViewFriendProfile.xaml;Pages\Homepage.xaml;Pages\Locations\CreateLocation.xaml;Pages\Locations\EditLocation.xaml;Pages\Locations\ViewLocationList.xaml;Pages\Locations\ViewSingleLocation.xaml;Pages\User\ChangePassword.xaml;Pages\User\Login.xaml;Pages\User\Signup.xaml;Pages\User\ViewOwnProfile.xaml;
 
-False
+True
 

@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
 
             <Label x:Name="lblCharacterPermissions" Grid.Column="0" Content="Permissions" Style="{StaticResource PrimaryTitleLabel}"/>
-            <Button x:Name="btnShareCharacter" Grid.Column="1"  Content="Share" Style="{StaticResource CallToAction}" Click="btnShareCharacter_Click"/>
+            <Button x:Name="btnShareCharacter" Grid.Column="1"  Content="Share" Style="{StaticResource InfoButton}" Click="btnShareCharacter_Click"/>
 
         </Grid>
         

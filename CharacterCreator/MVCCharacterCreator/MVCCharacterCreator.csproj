@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\cityquizio.png" />
+    <None Remove="wwwroot\Images\cityquizio.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\cityquizio.png" />
+    <Resource Include="wwwroot\Images\cityquizio.png" />
   </ItemGroup>
 
 </Project>

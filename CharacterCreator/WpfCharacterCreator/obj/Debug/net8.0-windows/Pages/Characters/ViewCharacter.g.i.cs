@@ -165,7 +165,7 @@ namespace WpfCharacterCreator.Pages.Characters {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/pages/characters/viewcharacter.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/pages/characters/viewcharacter.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Characters\ViewCharacter.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

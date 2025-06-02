@@ -137,7 +137,7 @@
         <Style TargetType="Button" x:Key="DangerButton">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Maroon"/>
             <Setter Property="Background" Value="Red"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Medium"/>
@@ -146,6 +146,26 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="Button" x:Key="InfoButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="DarkCyan"/>
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="Foreground" Value="DarkCyan"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="DarkCyan"/>
                 </Trigger>
             </Style.Triggers>
             <Style.Resources>
@@ -262,8 +282,6 @@
             <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Coral"/>
             <Setter Property="BorderThickness" Value="2"/>
-
-
         </Style>
 
         <Style TargetType="TabControl">

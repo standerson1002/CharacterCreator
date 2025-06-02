@@ -139,7 +139,7 @@
 
                 @if (traitList.Count() == 0)
                 {
-                    <h5 class="text-warning">Your character has no traits!</h5>
+                    <h5 class="none-yet-message">Your character has no traits!</h5>
                 }
                 else
                 {
@@ -182,7 +182,7 @@
 
                 @if (availableTraits.Count() == 0)
                 {
-                    <h5 class="text-warning">No available traits to add!</h5>
+                    <h5 class="none-yet-message">No available traits to add!</h5>
                 }
                 else
                 {
@@ -235,7 +235,7 @@
                 <hr class="hr" />
                 @if (skillList.Count() == 0)
                 {
-                    <h5 class="text-warning">Your character has no skills!</h5>
+                    <h5 class="none-yet-message">Your character has no skills!</h5>
                 }
                 else
                 {
@@ -317,7 +317,7 @@
                         <hr class="hr" />
                         @if (likeList.Count() == 0)
                         {
-                            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no likes!</h5>
+                            <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) has no likes!</h5>
                         }
                         else
                         {
@@ -349,7 +349,7 @@
                         <hr class="hr" />
                         @if (dislikeList.Count() == 0)
                         {
-                            <h5 class="text-warning">@Html.DisplayFor(model => model.CharacterName) has no dislikes!</h5>
+                            <h5 class="none-yet-message">@Html.DisplayFor(model => model.CharacterName) has no dislikes!</h5>
                         }
                         else
                         {

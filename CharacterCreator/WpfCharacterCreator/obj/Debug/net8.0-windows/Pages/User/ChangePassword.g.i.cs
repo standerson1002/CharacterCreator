@@ -101,7 +101,7 @@ namespace WpfCharacterCreator.Pages.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;component/pages/user/changepassword.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfCharacterCreator;V1.0.0.0;component/pages/user/changepassword.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\User\ChangePassword.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
