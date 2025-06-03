@@ -241,3 +241,18 @@ thead {
     color: white;
     font-weight: bold;
 }
+
+hr, .hr {
+    color: darkslateblue;
+}
+
+.bg-cornflowerblue {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+
+.form-control, .form-select {
+    border-color: darkslateblue;
+    color: slateblue;
+}

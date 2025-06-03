@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\wpfcharactercreator\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6ECE1CC1-0160-4DBE-90CD-CBA201AA6C28}|WpfCharacterCreator\\WpfCharacterCreator.csproj|solutionrelative:wpfcharactercreator\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\character\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\character\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\character\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\character\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,13 +39,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\App.xaml",
-              "RelativeDocumentMoniker": "WpfCharacterCreator\\App.xaml",
-              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\WpfCharacterCreator\\App.xaml",
-              "RelativeToolTip": "WpfCharacterCreator\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-02T19:46:58.151Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T18:50:15.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwCQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T18:43:34.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Character\\Index.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Index.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Views\\Character\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T18:35:06.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T18:27:48.541Z",
               "EditorCaption": ""
             },
             {
@@ -44,7 +96,7 @@
               "RelativeDocumentMoniker": "MVCCharacterCreator\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
               "RelativeToolTip": "MVCCharacterCreator\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAANwAAAAAAAAAAAAAAPQAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAwwAMBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-06-02T19:53:21.476Z",
               "EditorCaption": ""

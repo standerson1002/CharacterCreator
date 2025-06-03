@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f/mlmjG1xSrIDo3bobSX+8ZkjAdc5uRvVNLB2XpzdSc=",
+  "Hash": "bRRcNMsERYKA+ZV4Rdgdqag0G6JFXMHeLCt/4I1HsFw=",
   "Source": "MVCCharacterCreator",
   "BasePath": "_content/MVCCharacterCreator",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "t0ccjrt7x9",
-      "Integrity": "3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=",
+      "Fingerprint": "bc8v55nb76",
+      "Integrity": "+8QBwOro8vsR44In2cH6bt9U/34yl4GJ2muz+1/JrfM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -6213,6 +6213,51 @@
       ]
     },
     {
+      "Route": "css/site.bc8v55nb76.css",
+      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4950"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+8QBwOro8vsR44In2cH6bt9U/34yl4GJ2muz+1/JrfM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 18:59:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bc8v55nb76"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+8QBwOro8vsR44In2cH6bt9U/34yl4GJ2muz+1/JrfM="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -6223,7 +6268,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4700"
+          "Value": "4950"
         },
         {
           "Name": "Content-Type",
@@ -6231,11 +6276,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=\""
+          "Value": "\"+8QBwOro8vsR44In2cH6bt9U/34yl4GJ2muz+1/JrfM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 21:02:01 GMT"
+          "Value": "Tue, 03 Jun 2025 18:59:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6245,52 +6290,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.t0ccjrt7x9.css",
-      "AssetFile": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4700"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 21:02:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "t0ccjrt7x9"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-3Zacly4TIRc3mqu3eBGb86t67u3bYNwQHXV9sUYT2Fg="
+          "Value": "sha256-+8QBwOro8vsR44In2cH6bt9U/34yl4GJ2muz+1/JrfM="
         }
       ]
     },
