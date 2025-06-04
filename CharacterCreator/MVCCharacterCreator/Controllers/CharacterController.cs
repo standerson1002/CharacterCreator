@@ -198,13 +198,11 @@ namespace MVCCharacterCreator.Controllers
             }
         }
         
-
         public ActionResult RemoveTrait(int id, string traitID)
         {
           
             try
             {
-
                 bool result = _characterManager.RemoveTraitFromCharacter(id, traitID);
                 if (result)
                 {
@@ -245,6 +243,53 @@ namespace MVCCharacterCreator.Controllers
             {
                 TempData["MessageDanger"] = "An unexpected error occured.";
                 return RedirectToAction("Edit", new { id = id, p = 1 });
+            }
+        }
+
+        public ActionResult EditSkill(int id, string skillID)
+        {
+            try
+            {
+                UserCharacter character = _characterManager.GetCharacterByCharacterID(id);
+                ViewBag.Character = character;
+
+                List<CharacterSkill> skills = _characterManager.GetAllSkillsForCharacter(id);
+                CharacterSkill characterSkill = GetSkill(id, skillID);
+                ViewBag.Skill = characterSkill;
+                return View(characterSkill);
+            }
+            catch (Exception)
+            {
+                TempData["MessageDanger"] = "An unexpected error occured.";
+                return RedirectToAction("Edit", new { id = id, p = 2 });
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditSkill(CharacterSkill characterSkill)
+        {
+            try
+            {
+                CharacterSkill oldSkill = GetSkill(characterSkill.CharacterID, characterSkill.SkillID);
+                bool result = _characterManager.UpdateSkillForCharacter(characterSkill.CharacterID, oldSkill.SkillID, oldSkill.CharacterSkillDescription, characterSkill.CharacterSkillDescription);
+                if(result)
+                {
+                    TempData["MessageSuccess"] = "Skill updated.";
+                    return RedirectToAction("Edit", new { id = characterSkill.CharacterID, p = 2 });
+                }
+                else
+                {
+
+                    throw new Exception("Update failed");
+                }
+            }
+            catch (Exception)
+            {
+                UserCharacter character = _characterManager.GetCharacterByCharacterID(characterSkill.CharacterID);
+                ViewBag.Character = character;
+                return View();
             }
         }
 
@@ -341,7 +386,6 @@ namespace MVCCharacterCreator.Controllers
                 return RedirectToAction("Edit", new { id = id, p = 3 });
             }
         }
-
         public ActionResult RemoveInterest(int id, string interest, string type, string desc)
         {
             try
@@ -482,6 +526,26 @@ namespace MVCCharacterCreator.Controllers
             }
         }
 
+
+
+
+
+        // HELPERS
+
+        public CharacterSkill GetSkill(int character, string skillID)
+        {
+            List<CharacterSkill> skills = _characterManager.GetAllSkillsForCharacter(character);
+            CharacterSkill characterSkill = new CharacterSkill();
+            foreach (CharacterSkill skill in skills)
+            {
+                if (skill.SkillID == skillID)
+                {
+                    characterSkill = skill;
+                    break;
+                }
+            }
+            return characterSkill;
+        }
 
 
     }

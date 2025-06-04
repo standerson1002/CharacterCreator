@@ -254,6 +254,7 @@
                                     <td scope="row">@skill.SkillID</td>
                                     <td>@skill.CharacterSkillDescription</td>
                                     <td align="right">
+                                        @Html.ActionLink("Edit Skill", "EditSkill", new { id = Model.CharacterID, skillID = skill.SkillID }, new { @class = "btn btn-outline-primary" })
                                         @Html.ActionLink("Remove Skill", "RemoveSkill", new { id = Model.CharacterID, skillID = skill.SkillID }, new { @class = "btn btn-outline-warning" })
                                     </td>
                                 </tr>
@@ -285,7 +286,7 @@
 
                     <div class="form-group mb-4">
                         <label class="control-label" for="desc">Description</label>
-                        <input class="form-control" id="desc" name="desc"/>
+                        <input class="form-control" id="desc" name="desc" maxlength="100"/>
                         <span class="text-danger"></span>
                     </div>
                     <div class="form-group">

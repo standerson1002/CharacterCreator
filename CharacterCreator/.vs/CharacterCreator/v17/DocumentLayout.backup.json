@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\character\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\character\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\character\\editskill.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\character\\editskill.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{782DB486-1419-4B0A-86B6-0FDC95E2A580}|DataDomain\\DataDomain.csproj|c:\\charactercreator\\character-creator\\charactercreator\\datadomain\\characterskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{782DB486-1419-4B0A-86B6-0FDC95E2A580}|DataDomain\\DataDomain.csproj|solutionrelative:datadomain\\characterskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\controllers\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\controllers\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\character\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -17,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{782DB486-1419-4B0A-86B6-0FDC95E2A580}|DataDomain\\DataDomain.csproj|c:\\charactercreator\\character-creator\\charactercreator\\datadomain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{782DB486-1419-4B0A-86B6-0FDC95E2A580}|DataDomain\\DataDomain.csproj|solutionrelative:datadomain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|solutionrelative:mvccharactercreator\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{528F9943-7A4D-40D1-A226-39038C0D5410}|MVCCharacterCreator\\MVCCharacterCreator.csproj|c:\\charactercreator\\character-creator\\charactercreator\\mvccharactercreator\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,46 +54,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataDomain\\User.cs",
+              "RelativeDocumentMoniker": "DataDomain\\User.cs",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataDomain\\User.cs",
+              "RelativeToolTip": "DataDomain\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T19:31:55.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CharacterSkill.cs",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataDomain\\CharacterSkill.cs",
+              "RelativeDocumentMoniker": "DataDomain\\CharacterSkill.cs",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\DataDomain\\CharacterSkill.cs",
+              "RelativeToolTip": "DataDomain\\CharacterSkill.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T19:30:26.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EditSkill.cshtml",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\EditSkill.cshtml",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Character\\EditSkill.cshtml",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\EditSkill.cshtml",
+              "RelativeToolTip": "MVCCharacterCreator\\Views\\Character\\EditSkill.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T19:28:27.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CharacterController.cs",
+              "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Controllers\\CharacterController.cs",
+              "RelativeDocumentMoniker": "MVCCharacterCreator\\Controllers\\CharacterController.cs",
+              "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Controllers\\CharacterController.cs",
+              "RelativeToolTip": "MVCCharacterCreator\\Controllers\\CharacterController.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAIAwwBYBAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T19:20:15.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
               "RelativeToolTip": "MVCCharacterCreator\\Views\\Character\\Edit.cshtml",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAAACABAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-03T18:50:15.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "MVCCharacterCreator\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwCQAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-03T18:43:34.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Index.cshtml",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\Views\\Character\\Index.cshtml",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Views\\Character\\Index.cshtml",
               "RelativeToolTip": "MVCCharacterCreator\\Views\\Character\\Index.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-03T18:35:06.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -85,21 +153,19 @@
               "RelativeToolTip": "MVCCharacterCreator\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAACwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T18:27:48.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T18:27:48.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "site.css",
               "DocumentMoniker": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "MVCCharacterCreator\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\CharacterCreator\\Character-Creator\\CharacterCreator\\MVCCharacterCreator\\wwwroot\\css\\site.css",
               "RelativeToolTip": "MVCCharacterCreator\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAwwAMBAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAwwAIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-02T19:53:21.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T19:53:21.476Z"
             }
           ]
         }

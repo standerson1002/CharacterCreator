@@ -1,0 +1,45 @@
+﻿@model DataDomain.CharacterSkill
+@using DataDomain
+
+@{
+    ViewData["Title"] = "EditSkill";
+    UserCharacter character = ViewBag.Character;
+}
+
+<h1>Edit Character: @character.CharacterName</h1>
+
+<h4>Edit Skill: @Model.SkillID</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditSkill">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="CharacterID" class="control-label"></label>
+                <input asp-for="CharacterID" class="form-control" />
+                <span asp-validation-for="CharacterID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="SkillID" class="control-label"></label>
+                <input asp-for="SkillID" class="form-control"/>
+                <span asp-validation-for="SkillID" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="CharacterSkillDescription" class="control-label"></label>
+                <input asp-for="CharacterSkillDescription" class="form-control" />
+                <span asp-validation-for="CharacterSkillDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                @Html.ActionLink("Cancel", "Edit", new { id = character.CharacterID, p = 2 }, new { @class = "btn btn-secondary" })
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
