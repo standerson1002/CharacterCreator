@@ -204,6 +204,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/CharacterCreator/Character-Creator/CharacterCreator/MVCCharacterCreator/Views/Character/EditLikeDislike.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEVkaXRMaWtlRGlzbGlrZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/CharacterCreator/Character-Creator/CharacterCreator/MVCCharacterCreator/Views/Character/EditSkill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEVkaXRTa2lsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

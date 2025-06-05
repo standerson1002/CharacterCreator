@@ -337,6 +337,7 @@
                                             <td scope="row">@like.CharacterInterest</td>
                                             <td>@like.CharacterLikeDislikeDescription</td>
                                             <td align="right">
+                                                @Html.ActionLink("Edit Like", "EditLikeDislike", new { id = Model.CharacterID, likeDislikeID = like.CharacterInterest }, new { @class = "btn btn-outline-primary" })
                                                 @Html.ActionLink("Remove Like", "RemoveInterest", new { id = Model.CharacterID, interest = like.CharacterInterest, type = "like", desc = like.CharacterLikeDislikeDescription }, new { @class = "btn btn-outline-warning" })
                                             </td>
                                         </tr>
@@ -369,6 +370,7 @@
                                             <td scope="row">@dislike.CharacterInterest</td>
                                             <td>@dislike.CharacterLikeDislikeDescription</td>
                                             <td align="right">
+                                                @Html.ActionLink("Edit Dislike", "EditLikeDislike", new { id = Model.CharacterID, likeDislikeID = dislike.CharacterInterest }, new { @class = "btn btn-outline-primary" })
                                                 @Html.ActionLink("Remove Disike", "RemoveInterest", new { id = Model.CharacterID, interest = dislike.CharacterInterest, type="dislike", desc=dislike.CharacterLikeDislikeDescription}, new { @class = "btn btn-outline-warning" })
                                             </td>
                                         </tr>
@@ -403,7 +405,7 @@
 
                     <div class="form-group mb-4">
                         <label class="control-label" for="desc">Description:</label>
-                        <input class="form-control" id="desc" name="desc" />
+                        <input class="form-control" id="desc" name="desc" maxlength="100"/>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Add Like or Dislike" class="btn btn-primary" id="like-dislike-button"/>

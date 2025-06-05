@@ -344,6 +344,64 @@ namespace MVCCharacterCreator.Controllers
         }
 
 
+        public ActionResult EditLikeDislike(int id, string likeDislikeID)
+        {
+            try
+            {
+                UserCharacter character = _characterManager.GetCharacterByCharacterID(id);
+                CharacterLikeDislike likeDislike = GetLikeDislike(id, likeDislikeID);
+                ViewBag.Character = character;
+                ViewBag.OldLikeDislike = likeDislike;
+                return View(likeDislike);
+            }
+            catch (Exception)
+            {
+                TempData["MessageDanger"] = "An unexpected error occured.";
+                return RedirectToAction("Edit", new { id = id, p = 3 });
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditLikeDislike(string old, CharacterLikeDislike likeDislike)
+        {
+            try
+            {
+                UserCharacter character = _characterManager.GetCharacterByCharacterID(likeDislike.CharacterID);
+                CharacterLikeDislike oldLikeDislike = GetLikeDislike(character.CharacterID, old);
+
+                if(oldLikeDislike.CharacterInterest != likeDislike.CharacterInterest)
+                {
+                    CharacterLikeDislike alreadyExistingLikeDislike = GetLikeDislike(likeDislike.CharacterID, likeDislike.CharacterInterest);
+                    bool isTaken = alreadyExistingLikeDislike.CharacterInterest == likeDislike.CharacterInterest;
+                    if(isTaken)
+                    {
+                        TempData["MessageDanger"] = character.CharacterName + " already " + alreadyExistingLikeDislike.LikeDislikeType + "s " + likeDislike.CharacterInterest + ".";
+                        ViewBag.OldLikeDislike = oldLikeDislike;
+                        ViewBag.Character = character;
+                        return View(likeDislike);
+                    }
+                }
+
+
+                bool result = _characterManager.UpdateInterestForCharacter(likeDislike.CharacterID, likeDislike.LikeDislikeType, oldLikeDislike.CharacterInterest, likeDislike.CharacterInterest, oldLikeDislike.CharacterLikeDislikeDescription, likeDislike.CharacterLikeDislikeDescription);
+                if (result)
+                {
+                    TempData["MessageSuccess"] = "Updated " + likeDislike.LikeDislikeType + ".";
+                    return RedirectToAction("Edit", new { id = likeDislike.CharacterID, p = 3 });
+                }
+                else
+                {
+                    throw new Exception("Update failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["MessageDanger"] = ex.Message;
+                return RedirectToAction("Edit", new { id = likeDislike.CharacterID, p = 3 });
+            }
+        }
         public ActionResult AddLikeDislike(int id, string likeDislikeType, string interest, string desc)
         {
             try
@@ -545,6 +603,21 @@ namespace MVCCharacterCreator.Controllers
                 }
             }
             return characterSkill;
+        }
+
+        public CharacterLikeDislike GetLikeDislike(int character, string likeDislike)
+        {
+            List<CharacterLikeDislike> interests = _characterManager.GetAllInterestsForCharacter(character);
+            CharacterLikeDislike characterInterest = new CharacterLikeDislike();
+            foreach (CharacterLikeDislike interest in interests)
+            {
+                if (interest.CharacterInterest == likeDislike)
+                {
+                    characterInterest = interest;
+                    break;
+                }
+            }
+            return characterInterest;
         }
 
 
